@@ -1,0 +1,10 @@
+engines:
+  duplication:
+    enabled: true
+    exclude_paths:
+      - little_brother_taskbar/test/**
+      - alembic/versions/**
+
+exclude_paths:
+  - 'little_brother_taskbar/templates/**'
+  - 'little_brother_taskbar/static/contrib/**'

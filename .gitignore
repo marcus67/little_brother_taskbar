@@ -1,0 +1,16 @@
+MANIFEST
+dist
+*.egg-info
+__pycache__
+.coveragerc
+htmlcov
+.coverage
+*.iml
+workspace.xml
+.DS_Store
+.idea
+*.log
+coverage.xml
+debian
+coverage.xml
+.pytest_cache
