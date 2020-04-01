@@ -58,6 +58,7 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 `LittleBrotherTask` requires an active installation of [LittleBrother](https://github.com/marcus67/little_brother).
 The taskbar client will contact the master process of `LittleBrother`.   
 
+
 ## Tested Distributions
 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
