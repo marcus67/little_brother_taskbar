@@ -63,7 +63,7 @@ The taskbar client will contact the master process of `LittleBrother`.
 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
 | ------------ | ------------- | ---------------------------------------------------------------------- | ---------------- |
-| TODO         | TODO          |                                                                        | TODO             |
+| Debian       | testing       |                                                                        | 02.APR.2020      |
 
 ## Quick Install (Debian Package)
 
@@ -72,7 +72,7 @@ application on your system.
 
 ### Install the Software
 
-`LittleBrotherTaskbar` is available as a PIP package.
+`LittleBrotherTaskbar` will be available as a PIP package.
 
 ### Configure the Software
 
@@ -82,15 +82,26 @@ In its simplest setting the tool just needs to be started with the URL of the Li
     
 with `[HOSTNAME]` being the host where the LittleBrother master process is running and `[PORT ]` being its port.
 
+## Extended Command Line Configuration
+
+The tool recognizes the following extra options:
+
+   * `--username [NAME]`: Set the username to `[NAME]`. If the option is not given the tool will try to derive the
+     login name from the environment variable `USER`. If no user can be found the tool will fail.
+   
+   * `--locale [LOCALE]`: Set the locale to `[LOCALE]`, e.g. `en_US`. 
+   
+   * `--config [FILENAME]`: Read the configuration file `[FILENAME]`. If this option is not given the tool
+     will try to read the file `~/.config/LittleBrotherTaskbar.conf`. See [this file](etc/LittleBrotherTaskbar.conf) 
+     for an example.
+     
+   * `--loglevel [LEVEL]`: Set the log level to `DEBUG`, `INFO`, `WARNING`, or `ERROR`.  
+  
 ### Troubleshooting
 
 So, you went through all of the above but `LittleBrotherTaskbar` does not seem to work? Maybe this 
 [troubleshooting page](TROUBLESHOOTING.md) can help you.
 
-## Extended Configuration
-
-TODO
-  
 ## Caveats
 
 The application `LittleBrotherTaskbar` is far from perfect. Some major caveats are listed here and/or in the 

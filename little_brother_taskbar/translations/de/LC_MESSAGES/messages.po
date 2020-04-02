@@ -49,7 +49,7 @@ msgstr "Unbegrenzte Zeit"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr ""
+msgstr "Kein Zeit verfügbar"
 
 #: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
 msgid "Please log in to access this page."

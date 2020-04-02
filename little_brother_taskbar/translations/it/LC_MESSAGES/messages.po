@@ -20,25 +20,25 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
 msgid "Cannot request user status using url '{url}'"
-msgstr ""
+msgstr "Cannot request user status using url '{url}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
 msgid "User '{username}' not logged in"
-msgstr ""
+msgstr "User '{username}' not logged in"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr ""
+msgstr "Time left:\n{minutes} minutes"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid "Unlimited Time"
-msgstr ""
+msgstr "Unlimited Time"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr ""
+msgstr "No Activity Allowed"
 
 #: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
 msgid "Please log in to access this page."

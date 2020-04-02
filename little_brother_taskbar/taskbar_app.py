@@ -29,7 +29,7 @@ from python_base_app import configuration
 from little_brother_taskbar import taskbar
 from little_brother_taskbar import status_connector
 
-APP_NAME = 'LittleBrotherStatus'
+APP_NAME = 'LittleBrotherTaskbar'
 DEFAULT_UPDATE_INTERVAL = 5
 DEFAULT_STATUS_FONT_SIZE = 24
 DEFAULT_ERROR_MESSAGE_FONT_SIZE = 12
@@ -91,6 +91,8 @@ class App(base_app.BaseApp):
         self._tasktar_process = None
         self._username = None
 
+        self.check_user_configuration_file()
+
     def load_configuration(self, p_configuration):
 
         status_connector_section = status_connector.StatusConnectorConfigModel()
@@ -111,7 +113,7 @@ class App(base_app.BaseApp):
 
             if isinstance(user_status, str):
                 font = self._error_message_font
-                color = self._app_config.color_approaching_logout
+                color = self._app_config.color_error
                 text = user_status
 
             else:

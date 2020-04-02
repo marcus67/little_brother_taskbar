@@ -26,5 +26,5 @@ settings = {
 
 extended_settings = {
     "display_url": "github.com/marcus67/little_brother_taskbar",
-    "debian_package_revision": "01",
+    "debian_package_revision": "02",
 }
