@@ -47,6 +47,8 @@ setup_params = {
     "scripts": [
         "run_little_brother_taskbar",
     ],
+
+    "long_description_content_type" : 'text/markdown',
     "long_description": long_description,
 }
 
