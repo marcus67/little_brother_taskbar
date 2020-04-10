@@ -7,16 +7,17 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 ## Version 0.1.3 (April 10th, 2020)
 
 *   Upgrade to python_base_app 0.1.5
-*   Read long_description of `setup.py` from README.md
+*   Read long_description of `setup.py` from `README.md`
 *   Provide new icon showing panda in tray
 *   Provide empty test suite for CI
+*   Align version of PIP package `Jinja2` to that of `python-base-app`
+*   Remove some Codacy smells
 
 ## Version 0.1 Revision 02 (April 2nd, 2020)
 
 *   Automatic loading of user configuration file
 *   Provide sample configuration file
 *   Provide default English translations for Italian and French
-
 
 ## Version 0.1 Revision 01 (March 28th, 2020)
 

@@ -18,7 +18,7 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-SCRIPT_DIR=$(dirname $0)
+SCRIPT_DIR=$(dirname "$0")
 BASE_DIR=$(realpath ${SCRIPT_DIR}/..)
 
 if [ ! "${VIRTUALENV}" == "" ]; then
@@ -26,4 +26,4 @@ if [ ! "${VIRTUALENV}" == "" ]; then
 fi
 
 PATH=${PATH}:${HOME}/.virtualenvs/little-brother-taskbar/bin
-pybabel compile -d ${BASE_DIR}/little_brother_taskbar/translations
+pybabel compile -d "${BASE_DIR}/little_brother_taskbar/translations"

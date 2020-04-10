@@ -62,7 +62,7 @@ class StatusConnector(base_rest_api_access.BaseRestAPIAccess):
             result = fmt.format(username=p_username)
             self._logger.warning(result)
 
-        except Exception as e:
+        except Exception:
 
             fmt = self._("Cannot request user status using url '{url}'")
             result = fmt.format(url=self._get_api_url())
