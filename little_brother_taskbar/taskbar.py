@@ -20,7 +20,7 @@ import wx.adv
 import os.path
 
 TRAY_TOOLTIP = 'LittleBrother Tray'
-TRAY_ICON = os.path.join(os.path.dirname(__file__), 'static/icons/icon_baby-panda_32x32.png')
+TRAY_ICON = os.path.join(os.path.dirname(__file__), 'static/icons/little-brother-taskbar-logo_32x32.png')
 
 def create_menu_item(menu, label, func):
     item = wx.MenuItem(menu, -1, label)

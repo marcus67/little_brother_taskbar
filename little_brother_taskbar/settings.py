@@ -18,7 +18,7 @@
 settings = {
     "name": "little-brother-taskbar",
     "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1",
+    "version": "0.1.3",
     "description": "",
     "author": "Marcus Rickert",
     "author_email": "little-brother@web.de",
@@ -26,5 +26,4 @@ settings = {
 
 extended_settings = {
     "display_url": "github.com/marcus67/little_brother_taskbar",
-    "debian_package_revision": "02",
 }

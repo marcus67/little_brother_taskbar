@@ -1,3 +1,6 @@
+#!/usr/bin/env python3 
+# -*- coding: utf-8 -*-
+
 #    Copyright (C) 2019  Marcus Rickert
 #
 #    See https://github.com/marcus67/little_brother_taskbar
@@ -16,8 +19,7 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-include requirements.txt
-include README.md
-include little_brother_taskbar/static/icons/*.png
-#include little_brother_taskbar/test/resources/*
-include little_brother_taskbar/translations/*/*/messages.mo
+from little_brother_taskbar.test import test_suite
+
+if __name__ == '__main__':
+    exit(test_suite.main())

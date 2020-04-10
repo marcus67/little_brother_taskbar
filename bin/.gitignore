@@ -1,5 +1,6 @@
 make-debian-package.sh
 publish-debian-package.sh
+publish-pypi-package.sh
 install-debian-package.sh
 build-docker-images.sh
 test-app.sh

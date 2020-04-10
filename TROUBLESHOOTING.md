@@ -1,4 +1,4 @@
-![LittleBrother-Logo](little_brother_taskbar/static/icons/icon_baby-panda_128x128.png)
+![LittleBrotherTaskbar-Logo](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/little_brother_taskbar/static/icons/little-brother-taskbar-logo_128x128.png)
 
 # Troubleshooting `LittleBrotherTaskbar`
 

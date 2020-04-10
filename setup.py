@@ -18,7 +18,7 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import os
+import os.path
 
 from setuptools import setup
 
@@ -26,13 +26,14 @@ import little_brother_taskbar.settings
 
 # See https://stackoverflow.com/questions/26900328/install-dependencies-from-setup-py
 
-thelibFolder = os.path.dirname(os.path.realpath(__file__))
-requirementPath = thelibFolder + '/requirements.txt'
-install_requires = []
+this_directory = os.path.abspath(os.path.dirname(__file__))
 
-if os.path.isfile(requirementPath):
-    with open(requirementPath) as f:
-        install_requires = f.read().splitlines()
+with open(os.path.join(this_directory, 'requirements.txt')) as f:
+    install_requires = f.read().splitlines()
+
+with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 
 setup_params = {
     # standard setup configuration
@@ -49,8 +50,7 @@ setup_params = {
     "scripts": [
         "run_little_brother_taskbar",
     ],
-    "long_description": "Taskbar application for window manager tray to display status "
-                        "of users monitored by LittleBrother",
+    "long_description": long_description,
 }
 
 extended_setup_params = {
@@ -58,6 +58,8 @@ extended_setup_params = {
 
     # technical name used for e.g. directories, PIP-package, and users
     "build_debian_package" : False,
+    "build_pypi_package": True,
+    "publish_pypi_package": ['master', 'release'],
 
     "contributing_setups": ["python_base_app"],
 }

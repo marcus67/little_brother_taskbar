@@ -1,9 +1,15 @@
-![LittleBrother-Logo](little_brother_taskbar/static/icons/icon_baby-panda_128x128.png)
+![LittleBrotherTaskbar-Logo](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/little_brother_taskbar/static/icons/little-brother-taskbar-logo_128x128.png)
 
 # Change History 
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.3 (April 10th, 2020)
+
+*   Upgrade to python_base_app 0.1.5
+*   Read long_description of `setup.py` from README.md
+*   Provide new icon showing panda in tray
+*   Provide empty test suite for CI
 
 ## Version 0.1 Revision 02 (April 2nd, 2020)
 
