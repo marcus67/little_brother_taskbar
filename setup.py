@@ -38,10 +38,7 @@ with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup_params = {
     # standard setup configuration
 
-    "install_requires": [
-        'python-base-app',
-        'jinja2',
-        'wxPython'],
+    "install_requires": install_requires,
 
     "packages": ['little_brother_taskbar', 'little_brother_taskbar.test'],
 
