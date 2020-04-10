@@ -60,8 +60,6 @@ extended_setup_params = {
     "build_debian_package" : False,
     "build_pypi_package": True,
     "publish_pypi_package": ['master', 'release'],
-
-    "contributing_setups": ["python_base_app"],
 }
 
 setup_params.update(little_brother_taskbar.settings.settings)
