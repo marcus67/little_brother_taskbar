@@ -134,8 +134,11 @@ the following languages are supported/prepared:
 | -------- | ------ | --------- | ------------------------|
 | English  | en     | Available |  Marcus Rickert         |
 | German   | de     | Available |  Marcus Rickert         |
-| Italian  | it     | Prepared  |  N.N.                   |
+| Italian  | it     | Available |  Albano Battistella     |
 | French   | fr     | Prepared  |  N.N.                   |
+
+![Screenshot Status in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok_italian.png) 
+
 
 Your help with translations is greatly appreciated. Please, contact the author if you are interested in providing
 a translation. You do not necessarily have to clone this repository or be familiar with Python to do so.
