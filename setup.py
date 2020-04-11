@@ -58,7 +58,7 @@ extended_setup_params = {
     # technical name used for e.g. directories, PIP-package, and users
     "build_debian_package" : False,
     "build_pypi_package": True,
-    "publish_pypi_package": ['master', 'release'],
+    "publish_pypi_package": ['release'],
 }
 
 setup_params.update(little_brother_taskbar.settings.settings)

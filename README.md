@@ -16,8 +16,8 @@ at [Facebook](https://www.facebook.com/littlebrotherdebian) or write comments to
 
 The following screenshots show the display of `LittleBrotherTaskbar`.  
 
-![Screenshot Status](doc/screenshot_status_ok.png) 
-![Screenshot Status](doc/screenshot_status_warning.png) 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
 
 ## Change History 
 
@@ -57,7 +57,8 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 ## Prerequisites
 
 `LittleBrotherTask` requires an active installation of [LittleBrother](https://github.com/marcus67/little_brother).
-The taskbar client will contact the master process of `LittleBrother`.   
+The taskbar client will contact the master process of `LittleBrother`. Also, some Linux packages have to be
+installed to enable the compilation of the Python PIP package `wxPython`. See the installation instructions below. 
 
 
 ## Tested Distributions
@@ -66,14 +67,29 @@ The taskbar client will contact the master process of `LittleBrother`.
 | ------------ | ------------- | ---------------------------------------------------------------------- | ---------------- |
 | Debian       | testing       |                                                                        | 02.APR.2020      |
 
-## Quick Install (Debian Package)
+## Quick Install
 
 This guide will take you through the steps required to install, configure, and run the `LittleBrotherTaskbar` 
 application on your system. 
 
 ### Install the Software
 
-`LittleBrotherTaskbar` will be available as a [PIP package](https://pypi.org/project/little-brother-taskbar/).
+`LittleBrotherTaskbar` is available as a Python3 [PIP package](https://pypi.org/project/little-brother-taskbar/). Make sure
+you have the Debian packages
+
+*   `libgtk-3-dev` 
+*   `libpulse-dev`
+
+installed on your system. Then type
+
+    pip3 install little-brother-taskbar
+    
+to install the latest version. If you want to install a specific version use
+
+    pip3 install little-brother-taskbar==[VERSION]
+    
+    
+instead with `[VERSION]` replaced by the specific version. 
 
 ### Configure the Software
 
@@ -81,7 +97,7 @@ In its simplest setting the tool just needs to be started with the URL of the Li
 
     run_little_brother_taskbar --server-url=http://[HOSTNAME]:[PORT]
     
-with `[HOSTNAME]` being the host where the LittleBrother master process is running and `[PORT ]` being its port.
+with `[HOSTNAME]` being the host where the LittleBrother master process is running and `[PORT]` being its port.
 
 ## Extended Command Line Configuration
 

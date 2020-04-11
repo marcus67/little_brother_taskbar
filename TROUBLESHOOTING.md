@@ -9,8 +9,8 @@ This page tries to help you with troubleshooting the most common problems with r
 If you run into any complaints about not being able to find GTK components, make sure you have the following packages
 installed
 
-*    `libgtk-3-dev` 
-*    `libpulse-dev`
+*   `libgtk-3-dev` 
+*   `libpulse-dev`
 
 On a Debian based system issue
 
