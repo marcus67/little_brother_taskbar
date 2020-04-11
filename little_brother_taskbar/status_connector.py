@@ -27,13 +27,14 @@ SECTION_NAME = "StatusConnector"
 class StatusConnectorConfigModel(base_rest_api_access.BaseRestAPIAccessConfigModel):
 
     def __init__(self):
+        """Class to configure the class `StatusConnector`."""
         super().__init__(p_section_name=SECTION_NAME)
 
 
 class StatusConnector(base_rest_api_access.BaseRestAPIAccess):
 
     def __init__(self, p_config, p_lang):
-
+        """Class to request the user status from a LittleBrother master process."""
         super().__init__(
             p_config=p_config,
             p_base_api_url=constants.API_URL,

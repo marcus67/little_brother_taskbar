@@ -50,6 +50,7 @@ DEFAULT_LOCALE = "en_US"
 class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
 
     def __init__(self):
+        """Class for configuration of class `App`."""
         super().__init__(APP_NAME)
 
         self.check_interval = DEFAULT_UPDATE_INTERVAL
@@ -80,6 +81,7 @@ def get_argument_parser(p_app_name):
 class App(base_app.BaseApp):
 
     def __init__(self, p_pid_file, p_arguments, p_app_name):
+        """Main class for the application LittleBrotherTaskbar."""
         super(App, self).__init__(p_pid_file=p_pid_file, p_arguments=p_arguments, p_app_name=p_app_name,
                                   p_dir_name='.')
 

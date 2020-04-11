@@ -18,14 +18,14 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-SCRIPT_DIR=$(dirname $0)
-BASE_DIR=$(realpath ${SCRIPT_DIR}/..)
+SCRIPT_DIR=$(dirname "$0")
+BASE_DIR=$(realpath "${SCRIPT_DIR}/..")
 
 if [ ! "${VIRTUALENV}" == "" ]; then
-    source ${VIRTUALENV}/bin/activate
+    source "${VIRTUALENV}/bin/activate"
 fi
 
 PATH=${PATH}:${HOME}/.virtualenvs/little-brother-taskbar/bin
 echo "Enter LOCALE:"
 read LOCALE
-pybabel init -i ${BASE_DIR}/etc/messages.pot -d ${BASE_DIR}/little_brother_taskbar/translations -l ${LOCALE}
+pybabel init -i "${BASE_DIR}/etc/messages.pot" -d "${BASE_DIR}/little_brother_taskbar/translations" -l "${LOCALE}"
