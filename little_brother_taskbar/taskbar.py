@@ -15,12 +15,14 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+import os.path
+
 import wx
 import wx.adv
-import os.path
 
 TRAY_TOOLTIP = 'LittleBrother Tray'
 TRAY_ICON = os.path.join(os.path.dirname(__file__), 'static/icons/little-brother-taskbar-logo_32x32.png')
+
 
 def create_menu_item(menu, label, func):
     item = wx.MenuItem(menu, -1, label)
@@ -28,8 +30,10 @@ def create_menu_item(menu, label, func):
     menu.Append(item)
     return item
 
+
 class TaskBarIcon(wx.adv.TaskBarIcon):
     def __init__(self, p_config, p_status_frame, p_base_app):
+        """Entity to implement a taskbar tray icon for the application."""
         super(TaskBarIcon, self).__init__()
         self._config = p_config
         self._status_frame = p_status_frame
@@ -47,10 +51,10 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
         icon.CopyFromBitmap(wx.Bitmap(path))
         self.SetIcon(icon, TRAY_TOOLTIP)
 
-    def on_left_down(self, event):
+    def on_left_down(self, _event):
         self._status_frame.Show(not self._status_frame.IsShown())
 
-    def on_exit(self, event):
+    def on_exit(self, _event):
         self.shut_down()
 
     def shut_down(self):

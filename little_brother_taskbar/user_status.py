@@ -21,7 +21,7 @@
 class UserStatus(object):
 
     def __init__(self, p_username=None):
-
+        """Simple entity to transport the status of user to the LittleBrotherTaskbar."""
         self.username = p_username
         self.minutes_left_in_session = None
         self.activity_allowed = False

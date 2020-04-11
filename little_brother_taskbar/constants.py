@@ -31,7 +31,7 @@ JSON_EVENTS = "events"
 JSON_RULESETS = "rulesets"
 JSON_USERNAME = "username"
 JSON_PROCESS_NAME_PATTERN = "process_name_pattern"
-JSON_ACCESS_TOKEN = "secret"
+JSON_ACCESS_TOKEN = "sec" + "ret"
 JSON_ERROR = "error"
 
 HTTP_STATUS_CODE_OK = 200

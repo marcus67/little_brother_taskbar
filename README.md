@@ -60,7 +60,6 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 The taskbar client will contact the master process of `LittleBrother`. Also, some Linux packages have to be
 installed to enable the compilation of the Python PIP package `wxPython`. See the installation instructions below. 
 
-
 ## Tested Distributions
 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
@@ -83,12 +82,11 @@ you have the Debian packages
 installed on your system. Then type
 
     pip3 install little-brother-taskbar
-    
+
 to install the latest version. If you want to install a specific version use
 
     pip3 install little-brother-taskbar==[VERSION]
-    
-    
+
 instead with `[VERSION]` replaced by the specific version. 
 
 ### Configure the Software
@@ -112,9 +110,10 @@ The tool recognizes the following extra options:
      will try to read the file `~/.config/LittleBrotherTaskbar.conf`. 
      See [this file](https://github.com/marcus67/little_brother_taskbar/blob/master/etc/LittleBrotherTaskbar.conf) 
      for an example.
- 
+
 *   `--loglevel [LEVEL]`: Set the log level to `DEBUG`, `INFO`, `WARNING`, or `ERROR`.  
-  
+
+
 ### Troubleshooting
 
 So, you went through all of the above but `LittleBrotherTaskbar` does not seem to work? Maybe this 

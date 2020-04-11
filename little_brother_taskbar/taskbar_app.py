@@ -15,19 +15,18 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import locale
-import threading
 import gettext
+import locale
 import os.path
+import threading
 
 import wx
 import wx.adv
 
+from little_brother_taskbar import status_connector
+from little_brother_taskbar import taskbar
 from python_base_app import base_app
 from python_base_app import configuration
-
-from little_brother_taskbar import taskbar
-from little_brother_taskbar import status_connector
 
 APP_NAME = 'LittleBrotherTaskbar'
 DEFAULT_UPDATE_INTERVAL = 5
@@ -43,8 +42,9 @@ DEFAULT_WINDOW_WIDTH = 220
 DEFAULT_WINDOW_HEIGHT = 110
 DEFAULT_LOCALE = "en_US"
 
+
 # Dummy function to trigger extraction by pybabel...
-#_ = lambda x, y=None: x
+# _ = lambda x, y=None: x
 
 
 class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
@@ -64,7 +64,6 @@ class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
         self.color_approaching_logout = DEFAULT_COLOR_APPROACHING_LOGOUT
         self.minutes_approaching_logout = DEFAULT_MINUTES_APPROACHING_LOGOUT
         self.locale = DEFAULT_LOCALE
-
 
 
 def get_argument_parser(p_app_name):
@@ -106,7 +105,6 @@ class App(base_app.BaseApp):
     def update_status(self):
         self._logger.debug("update_status")
 
-
         user_status = self._status_connector.request_status(p_username=self._username)
 
         if user_status is not None:
@@ -144,12 +142,12 @@ class App(base_app.BaseApp):
                     color = self._app_config.color_warning
                     text = self._("No Activity Allowed")
 
-            # See https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
+            # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
             wx.CallAfter(self._static_text.SetFont, font)
             wx.CallAfter(self._status_frame.SetBackgroundColour, wx.Colour(color))
             wx.CallAfter(self._static_text.SetBackgroundColour, wx.Colour(color))
             wx.CallAfter(self._static_text.SetLabel, text)
-            wx.CallAfter(self._static_text.Wrap , self._app_config.window_width)
+            wx.CallAfter(self._static_text.Wrap, self._app_config.window_width)
 
     def prepare_services(self, p_full_startup=True):
 
@@ -195,11 +193,11 @@ class App(base_app.BaseApp):
         self.add_recurring_task(p_recurring_task=task)
 
         self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=APP_NAME,
-                                      style=wx.CAPTION|wx.STAY_ON_TOP|wx.RESIZE_BORDER,
+                                      style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
                                       size=(self._app_config.window_width, self._app_config.window_height))
 
         self._static_text = wx.StaticText(self._status_frame, id=wx.ID_ANY,
-                                          style=wx.ALIGN_CENTER|wx.ALIGN_CENTER_VERTICAL)
+                                          style=wx.ALIGN_CENTER | wx.ALIGN_CENTER_VERTICAL)
 
         # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
         self._status_font = wx.Font(self._app_config.status_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
@@ -220,7 +218,6 @@ class App(base_app.BaseApp):
         self._icon = None
         super().stop_event_queue()
 
-
     def stop_services(self):
 
         if self._taskbar_process is not None:
@@ -229,6 +226,7 @@ class App(base_app.BaseApp):
 
             self._taskbar_process.join()
             self._taskbar_process = None
+
 
 def main():
     parser = get_argument_parser(p_app_name=APP_NAME)
