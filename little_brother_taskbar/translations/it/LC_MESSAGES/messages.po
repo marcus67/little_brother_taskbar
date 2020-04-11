@@ -1,14 +1,14 @@
 # Italian translations for .
 # Copyright (C) 2019 ORGANIZATION
 # This file is distributed under the same license as the  project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version:  Plittle-brother-taskbar\n"
 "Report-Msgid-Bugs-To: arcus.rickert@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
-"PO-Revision-Date: 2019-06-02 00:51+0200\n"
+"PO-Revision-Date: 2020-04-11 15:00+0100\n"
 "Last-Translator: albano battistella <albano_battistella@hotmail.com>\n"
 "Language: it\n"
 "Language-Team: it <LL@li.org>\n"
@@ -20,25 +20,25 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
 msgid "Cannot request user status using url '{url}'"
-msgstr "Cannot request user status using url '{url}'"
+msgstr "Impossibile richiedere lo stato utente tramite url '{url}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
 msgid "User '{username}' not logged in"
-msgstr "User '{username}' not logged in"
+msgstr "User '{username}' accesso non effettuato"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr "Time left:\n{minutes} minutes"
+msgstr "Tempo rimasto:\n{minutes} minuti"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid "Unlimited Time"
-msgstr "Unlimited Time"
+msgstr "Tempo Illimitato"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr "No Activity Allowed"
+msgstr "Nessuna Attività Consentita"
 
 #: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
 msgid "Please log in to access this page."
