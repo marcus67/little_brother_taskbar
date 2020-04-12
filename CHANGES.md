@@ -4,6 +4,11 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.5 (release, April 12th, 2020)
+
+*   Optionally provide speech generation for notification messages
+*   Upgrade to python_base_app 0.1.6
+
 ## Version 0.1.4 (release, April 10th, 2020)
 
 *   Activate the Italian translations

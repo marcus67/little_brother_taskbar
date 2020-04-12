@@ -9,7 +9,7 @@ to display the remaining play time of the current user.
 
 ## Contact
 
-The taskbar does not have a homepage of its own. It sharing `LittleBrother`'s homepage. Visit the project 
+The taskbar does not have a homepage of its own. It is sharing `LittleBrother`'s homepage. Visit the project 
 at [Facebook](https://www.facebook.com/littlebrotherdebian) or write comments to little-brother(at)web.de.
 
 ## Screenshots
@@ -58,7 +58,10 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 
 `LittleBrotherTask` requires an active installation of [LittleBrother](https://github.com/marcus67/little_brother).
 The taskbar client will contact the master process of `LittleBrother`. Also, some Linux packages have to be
-installed to enable the compilation of the Python PIP package `wxPython`. See the installation instructions below. 
+installed to enable the compilation of the Python PIP package `wxPython`. See the installation instructions below.
+
+In case you want to use the MP3 speech generation for notification messages you have to install the PIP package
+[python-google-speak](https://pypi.org/project/python-google-speak/).
 
 ## Tested Distributions
 
@@ -87,7 +90,13 @@ to install the latest version. If you want to install a specific version use
 
     pip3 install little-brother-taskbar==[VERSION]
 
-instead with `[VERSION]` replaced by the specific version. 
+instead with `[VERSION]` replaced by the specific version.
+
+In order to use the speech generation for notification messages, issue the command
+
+    pip3 install python-google-speak 
+
+and use the `--speech-engine` command line option (see below).
 
 ### Configure the Software
 
@@ -104,15 +113,22 @@ The tool recognizes the following extra options:
 *   `--username [NAME]`: Set the username to `[NAME]`. If the option is not given the tool will try to derive the
      login name from the environment variable `USER`. If no user can be found, the tool will fail.
 
-*   `--locale [LOCALE]`: Set the locale to `[LOCALE]`, e.g. `en_US`. 
+*   `--locale [LOCALE]`: Set the locale to `[LOCALE]`, e.g. `en_US`. Note that this locale is only used until the
+     taskbar receives the first status from the LittleBrother master since status contains the locale configured for
+     the user. 
 
 *   `--config [FILENAME]`: Read the configuration file `[FILENAME]`. If this option is not given the tool
      will try to read the file `~/.config/LittleBrotherTaskbar.conf`. 
      See [this file](https://github.com/marcus67/little_brother_taskbar/blob/master/etc/LittleBrotherTaskbar.conf) 
      for an example.
 
-*   `--loglevel [LEVEL]`: Set the log level to `DEBUG`, `INFO`, `WARNING`, or `ERROR`.  
+*   `--loglevel [LEVEL]`: Set the log level to `DEBUG`, `INFO`, `WARNING`, or `ERROR`.
 
+*   `--speech-engine [ENGINE]`: Activate and select the speech engine to speak messages for the monitored user.
+    Possible values for `[ENGINE]` are: `google` 
+    (preferred; which requires PIP package [python-google-speak](https://pypi.org/project/python-google-speak/)) or 
+    `external` (which requires the Debian package [festival](https://packages.debian.org/stretch/festival) and 
+    possibly some more configuration)
 
 ### Troubleshooting
 

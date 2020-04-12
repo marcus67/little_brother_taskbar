@@ -29,7 +29,7 @@ try:
         "commit_id": git_metadata.GIT_COMMIT_ID[0:16],
         "branch": git_metadata.GIT_BRANCH,
         "author_name": git_metadata.GIT_AUTHOR_NAME,
-        "author_email": git_metadata.GIT_AUTHOR_EMAIL
+        "author_email":git_metadata.GIT_AUTHOR_EMAIL
     }
 
 except Exception as e:

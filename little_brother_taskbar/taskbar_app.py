@@ -27,6 +27,7 @@ from little_brother_taskbar import status_connector
 from little_brother_taskbar import taskbar
 from python_base_app import base_app
 from python_base_app import configuration
+from python_base_app import audio_handler
 
 APP_NAME = 'LittleBrotherTaskbar'
 DEFAULT_UPDATE_INTERVAL = 5
@@ -75,6 +76,9 @@ def get_argument_parser(p_app_name):
                         help='Set the username to request the status for')
     parser.add_argument('--locale', dest='locale', action='store',
                         help='Set the locale string (e.g. de_DE)')
+    parser.add_argument('--speech-engine', dest='speech_engine', action='store',
+                        help='Set the speech engine for MP3 generation of notification messages',
+                        choices=['google', 'external'])
     return parser
 
 
@@ -89,8 +93,11 @@ class App(base_app.BaseApp):
         self._app_config = None
         self._status_frame = None
         self._status_connector = None
+        self._audio_handler = None
         self._tasktar_process = None
         self._username = None
+        self._latest_notification = None
+        self._locale = None
 
         self.check_user_configuration_file()
 
@@ -99,10 +106,38 @@ class App(base_app.BaseApp):
         status_connector_section = status_connector.StatusConnectorConfigModel()
         p_configuration.add_section(status_connector_section)
 
+        audio_handler_section = audio_handler.AudioHandlerConfigModel()
+        audio_handler_section.spool_dir = "/tmp"
+        p_configuration.add_section(audio_handler_section)
+
         self._app_config = TaskBarAppConfigModel()
         p_configuration.add_section(self._app_config)
 
         return super(App, self).load_configuration(p_configuration=p_configuration)
+
+    def set_locale(self, p_locale):
+
+        if self._locale is None or p_locale != self._locale:
+            localedir = os.path.join(os.path.dirname(__file__), "translations")
+            self._lang = gettext.translation("messages", localedir=localedir,
+                                             languages=[p_locale], fallback=True)
+            if self._locale is None:
+                fmt = "Using locale '{locale}'"
+
+            else:
+                fmt = "Switching to locale '{locale}'"
+
+            self._logger.info(fmt.format(locale=p_locale))
+            self._ = self._lang.gettext
+            self._locale = p_locale
+
+    def speak_status(self, p_user_status):
+
+        if self._audio_handler is not None:
+            if p_user_status.notification is not None and p_user_status.notification != self._latest_notification:
+                self._audio_handler.notify(p_text=p_user_status.notification, p_locale=p_user_status.locale)
+                self._latest_notification = p_user_status.notification
+
 
     def update_status(self):
         self._logger.debug("update_status")
@@ -117,6 +152,10 @@ class App(base_app.BaseApp):
                 text = user_status
 
             else:
+
+                self.set_locale(p_locale=user_status.locale)
+                self.speak_status(p_user_status=user_status)
+
                 font = self._status_font
 
                 if not user_status.logged_in:
@@ -153,8 +192,16 @@ class App(base_app.BaseApp):
 
     def prepare_services(self, p_full_startup=True):
 
+        config = self._config[audio_handler.SECTION_NAME]
+
+        if self._arguments.speech_engine is not None:
+            config.speech_engine = self._arguments.speech_engine
+
+        if config.is_active():
+            self._audio_handler = audio_handler.AudioHandler(p_config=config)
+            self._audio_handler.init_engine()
+
         # Determine locale
-        localedir = os.path.join(os.path.dirname(__file__), "translations")
         current_locale = None
 
         if self._arguments.locale is not None:
@@ -166,11 +213,7 @@ class App(base_app.BaseApp):
         if current_locale is None:
             (current_locale, _encoding) = locale.getdefaultlocale()
 
-        self._lang = gettext.translation("messages", localedir=localedir,
-                                         languages=[current_locale], fallback=True)
-        fmt = "Using locale '{locale}'"
-        self._logger.info(fmt.format(locale=current_locale))
-        self._ = self._lang.gettext
+        self.set_locale(p_locale=current_locale)
 
         # Determine username
         self._username = self._arguments.username
