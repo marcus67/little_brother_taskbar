@@ -23,13 +23,13 @@ import unittest
 
 from python_base_app import log_handling
 from python_base_app.test import base_test
+from little_brother_taskbar.test import test_taskbar_app
 
 
 def add_test_cases(p_test_suite, p_config_filename=None):
-    # base_test.add_tests_in_test_unit(
-    #     p_test_suite=p_test_suite,
-    #     p_test_unit_class=test_process_info.TestProcessInfo, p_config_filename=p_config_filename)
-    pass
+     base_test.add_tests_in_test_unit(
+         p_test_suite=p_test_suite,
+         p_test_unit_class=test_taskbar_app.TestTaskbarApp, p_config_filename=p_config_filename)
 
 
 def main():

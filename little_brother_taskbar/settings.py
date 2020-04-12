@@ -18,7 +18,7 @@
 settings = {
     "name": "little-brother-taskbar",
     "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "",
     "author": "Marcus Rickert",
     "author_email": "little-brother@web.de",

@@ -1,4 +1,4 @@
-#!/bin/bash
+# -*- coding: utf-8 -*-
 
 #    Copyright (C) 2019  Marcus Rickert
 #
@@ -18,15 +18,24 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-SCRIPT_DIR=$(dirname "$0")
-BASE_DIR=$(realpath "${SCRIPT_DIR}/..")
+import unittest
+import os.path
 
-if [ ! "${VIRTUALENV}" == "" ]; then
-    source "${VIRTUALENV}/bin/activate"
-fi
+from python_base_app.test import base_test
+from little_brother_taskbar import taskbar_app
 
-PATH=${PATH}:${HOME}/.virtualenvs/little-brother-taskbar/bin
-pybabel extract -F "${BASE_DIR}/etc/babel.cfg" -o "${BASE_DIR}/etc/messages.pot" \
-        "${BASE_DIR}/little_brother_taskbar" \
-        "${BASE_DIR}/contrib/python_base_app/python_base_app"
-pybabel update -i "${BASE_DIR}/etc/messages.pot" -d "${BASE_DIR}/little_brother_taskbar/translations"
+SECTION_NAME = "MySection"
+INT_VALUE = 123
+NEW_INT_VALUE = 456
+STRING_VALUE = "Hello"
+BOOLEAN_VALUE = True
+
+class TestTaskbarApp(base_test.BaseTestCase):
+
+    def test_config_model(self):
+
+        a_config = taskbar_app.TaskBarAppConfigModel()
+
+
+if __name__ == '__main__':
+    unittest.main()
