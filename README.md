@@ -146,15 +146,26 @@ any trouble with installing and/or running the application.
 The application uses the PIP package `Flask-Babel` to provide internationalization for the web frontend, Currently, 
 the following languages are supported/prepared:
 
-| Language | Locale | Status    | Translation provided by |
-| -------- | ------ | --------- | ------------------------|
-| English  | en     | Available |  Marcus Rickert         |
-| German   | de     | Available |  Marcus Rickert         |
-| Italian  | it     | Available |  Albano Battistella     |
-| French   | fr     | Prepared  |  N.N.                   |
+| Flag                                                                                                                                    | Language      | Locale | Status         | Translation provided by |
+| ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ------------------------|
+| ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Available      |  Marcus Rickert         |
+| ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Available      |  Marcus Rickert         |
+| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella     |
+| ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex           |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | In preparation |  N.N.                   |
+| ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | In preparation |  N.N.                   |
+| ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | In preparation |  N.N.                   |
 
-![Screenshot Status in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok_italian.png) 
+### Sample Screenshots
 
+*   ![Screenshot Status in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok_italian.png) 
+
+### Sample Speech Audio Files
+
+*   [Sample 1 in Dutch](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-nl-1.mp3)
+*   [Sample 2 in Dutch](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-nl-2.mp3)
+*   [Sample 1 in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-it-1.mp3)
+*   [Sample 2 in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-it-2.mp3)
 
 Your help with translations is greatly appreciated. Please, contact the author if you are interested in providing
 a translation. You do not necessarily have to clone this repository or be familiar with Python to do so.
