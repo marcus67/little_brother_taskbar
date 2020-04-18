@@ -4,6 +4,11 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.6 (release, April 18th, 2020)
+
+*   Add Dutch localization (locale 'nl')
+*   Upgrade to python_base_app 0.1.8
+
 ## Version 0.1.5 (release, April 12th, 2020)
 
 *   Optionally provide speech generation for notification messages

@@ -18,8 +18,6 @@ On a Debian based system issue
     
 and then try to re-install `LittleBrotherTaskbar`.
 
-For building the `wxPython` PIP package you  
-
 ## Trouble finding the library `libwx_baseu-3.0.so` 
 
 Unfortunately, there seems to be some incompatibilty between the latest versions of the Python `setuptools` and the
