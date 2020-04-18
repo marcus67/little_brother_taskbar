@@ -19,22 +19,16 @@
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import unittest
-import os.path
 
-from python_base_app.test import base_test
 from little_brother_taskbar import taskbar_app
+from python_base_app.test import base_test
 
-SECTION_NAME = "MySection"
-INT_VALUE = 123
-NEW_INT_VALUE = 456
-STRING_VALUE = "Hello"
-BOOLEAN_VALUE = True
 
 class TestTaskbarApp(base_test.BaseTestCase):
 
     def test_config_model(self):
-
         a_config = taskbar_app.TaskBarAppConfigModel()
+        self.assertIsNotNone(a_config)
 
 
 if __name__ == '__main__':
