@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.7 (release, April 20th, 2020)
+
+*   Add Finnish localization (locale 'fi')
+
 ## Version 0.1.6 (release, April 18th, 2020)
 
 *   Add Dutch localization (locale 'nl')

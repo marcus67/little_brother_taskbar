@@ -144,7 +144,7 @@ any trouble with installing and/or running the application.
 ## Internationalization
 
 The application uses the PIP package `Flask-Babel` to provide internationalization for the web frontend, Currently, 
-the following languages are supported/prepared:
+the following languages are supported/prepared (in the order they were made available):
 
 | Flag                                                                                                                                    | Language      | Locale | Status         | Translation provided by |
 | ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ------------------------|
@@ -152,13 +152,16 @@ the following languages are supported/prepared:
 | ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Available      |  Marcus Rickert         |
 | ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella     |
 | ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex           |
+| ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | Available      |  Iisakki Kosonen        |
 | ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | In preparation |  N.N.                   |
 | ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | In preparation |  N.N.                   |
 | ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | In preparation |  N.N.                   |
+| ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | In preparation |  N.N.                   |
 
 ### Sample Screenshots
 
-*   ![Screenshot Status in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok_italian.png) 
+![Screenshot Status in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok_italian.png) 
+![Screenshot Status in Finnish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-finnish.png) 
 
 ### Sample Speech Audio Files
 
@@ -166,6 +169,17 @@ the following languages are supported/prepared:
 *   [Sample 2 in Dutch](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-nl-2.mp3)
 *   [Sample 1 in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-it-1.mp3)
 *   [Sample 2 in Italian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-it-2.mp3)
+*   [Sample 1 in Finnish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-fi-1.mp3)
+*   [Sample 2 in Finnish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-fi-2.mp3)
 
 Your help with translations is greatly appreciated. Please, contact the author if you are interested in providing
 a translation. You do not necessarily have to clone this repository or be familiar with Python to do so.
+
+## Credits
+
+*   Thanks to all the people maintaining the wonderful script language [Python](https://www.python.org/) 
+and the libraries on [PyPi](https://pypi.org/).
+ 
+*   The country flags were taken from [www.countryflags.com](https://www.countryflags.com/).
+
+*   See the section about on internalization for credits regarding the translations.
