@@ -4,9 +4,13 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
-## Version 0.1.7 (release, April 20th, 2020)
+## Version 0.1.7 (release, April XXX, 2020)
 
 *   Add Finnish localization (locale 'fi')
+*   Add Turkish localization (locale 'tr')
+*   Add Japanese localization (locale 'ja')
+*   Add Bangla localization (locale 'bn')
+*   Add license file
 
 ## Version 0.1.6 (release, April 18th, 2020)
 
