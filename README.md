@@ -153,11 +153,11 @@ the following languages are supported/prepared (in the order they were made avai
 | ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella     |
 | ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex           |
 | ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | Available      |  Iisakki Kosonen        |
-| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Available      |  Albano Battistella     |
 | ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | Available      |  Selay Dogan            |
-| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | Available      |  Jewgenij Moldawski     |
+| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | Available      |  J. Moldawski           |
 | ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | Available      |  Arik M.                |
 | ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | Available      |  N.N.                   |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Available      |  Albano Battistella     |
 | ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | In preparation |  N.N.                   |
 | ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | In preparation |  N.N.                   |
 | ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                   |
@@ -174,6 +174,7 @@ Note that the spoken messages are provided by the `LittleBrother` master process
 ![Screenshot Status in Russian](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-russian.png) 
 ![Screenshot Status in Japanese](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-japanese.png) 
 ![Screenshot Status in Bangla](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-bangla.png) 
+![Screenshot Status in French](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-french.png) 
 
 ### Sample Speech Audio Files
 
@@ -191,6 +192,8 @@ Note that the spoken messages are provided by the `LittleBrother` master process
 *   [Sample 2 in Japanese](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-ja-2.mp3)
 *   [Sample 1 in Bangla](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-bn-1.mp3)
 *   [Sample 2 in Bangla](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-bn-2.mp3)
+*   [Sample 1 in French](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-fr-1.mp3)
+*   [Sample 2 in French](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-fr-2.mp3)
 
 Your help with translations is greatly appreciated. Please, contact the author if you are interested in providing
 a translation. You do not necessarily have to clone this repository or be familiar with Python to do so.

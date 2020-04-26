@@ -10,6 +10,7 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 *   Add Turkish localization (locale 'tr')
 *   Add Japanese localization (locale 'ja')
 *   Add Bangla localization (locale 'bn')
+*   Add French localization (locale 'fr')
 *   Add license file
 
 ## Version 0.1.6 (release, April 18th, 2020)
