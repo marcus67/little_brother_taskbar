@@ -41,11 +41,3 @@ msgstr "Неограниченное время"
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
 msgstr "Пользование запрещено"
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "Пожалуйста войдите в систему."
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "Неправильное имя пользователя или пароль"

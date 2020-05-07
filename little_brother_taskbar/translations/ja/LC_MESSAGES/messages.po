@@ -1,12 +1,12 @@
-# Japanese translations for PROJECT.
+# Japanese translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <arikmahbub@gmail.com>, 2020.
+# Arik Mahbub <arikmahbub@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Project-Id-Version: LittleBrotherTaskbar\n"
+"Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-20 09:47+0200\n"
 "Last-Translator: Arik Mahbub <arikmahbub@gmail.com>\n"
@@ -40,11 +40,3 @@ msgstr "時間無制限"
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
 msgstr "活動禁止"
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "このページにアクセスするにはログインしてください."
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "ログインIDかパスワードが間違っています"

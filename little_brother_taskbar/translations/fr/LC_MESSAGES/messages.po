@@ -1,12 +1,12 @@
-# French translations for PROJECT.
+# French translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Project-Id-Version: LittleBrotherTaskbar\n"
+"Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-20 17:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
@@ -41,12 +41,3 @@ msgstr "Temps illimité"
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
 msgstr "Aucune activité autorisée"
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "Veuillez vous connecter pour accéder à cette page."
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "Identifiant ou mot de passe incorrect"
-

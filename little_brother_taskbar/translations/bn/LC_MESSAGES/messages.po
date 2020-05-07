@@ -1,15 +1,15 @@
-# Bangla translations for PROJECT.
+# Bangla translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Jyoti Zaman <jyotizaman@yahoo.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Project-Id-Version: LittleBrotherTaskbar\n"
+"Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-20 10:00+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: ROWNAK JYOTI ZAMAN <jyotizaman@yahoo.com>\n"
 "Language: bn\n"
 "Language-Team: bn <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -24,7 +24,7 @@ msgstr "'{url}' ইউআরএল ব্যবহার করে ইউজা�
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
 msgid "User '{username}' not logged in"
-msgstr "ব্যবহারকারী '{username}' লগ ইন নেই"
+msgstr "ব্যবহারকারী '{username}' লগ ইন অবস্থায় নেই"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
 msgid ""
@@ -40,12 +40,4 @@ msgstr "কোন সময়সীমা নেই"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr "কোন কাজ করা যাবে না"
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "এই পাতায় লগ ইন করো"
-
-#: /home/mr/projects/LittleBrotherGitHub/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "ভুল লগ ইন অথবা পাসওয়ার্ড"
+msgstr "কোন কাজ করার অনুমতি নেই"

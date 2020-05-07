@@ -1,7 +1,7 @@
-# Turkish translations for LittleBrotherTaskbar.
+# Thai translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# Selay Dogan, 2020.
+# Busaba Kramer, 2020.
 #
 msgid ""
 msgstr ""
@@ -9,9 +9,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-19 23:19+0200\n"
-"Last-Translator: Selay Dogan\n"
-"Language: tr\n"
-"Language-Team: tr <LL@li.org>\n"
+"Last-Translator: Busaba Kramer\n"
+"Language: th\n"
+"Language-Team: th <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,24 +20,23 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
 msgid "Cannot request user status using url '{url}'"
-msgstr "Kullanıcı durumunu '{url}' url kullanarak istenemiyor"
+msgstr "ไม่สามารถขอสถานะผู้ใช้โดยใช้ URL '{url}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
 msgid "User '{username}' not logged in"
-msgstr "'{username}' kullanıcının oturumu açık değildir"
+msgstr "ผู้ใช้'{username}'ยังไม่ได้ล๊อกอิน"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr ""
-"Kalan zaman:\n"
-"{minutes} dakika"
+msgstr "เวลาที่เหลืออยู่:\n"
+"{minutes} นาที"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid "Unlimited Time"
-msgstr "Sınırsız zaman"
+msgstr "ไม่จำกัดเวลา"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr "Etkinlik için izin yok"
+msgstr "ไม่มีกิจกรรมที่อนุญาต"

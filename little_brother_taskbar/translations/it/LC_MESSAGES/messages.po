@@ -1,12 +1,12 @@
-# Italian translations for .
+# Italian translations for LittleBrotherTaskbar.
 # Copyright (C) 2019 ORGANIZATION
 # This file is distributed under the same license as the  project.
 # ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  Plittle-brother-taskbar\n"
-"Report-Msgid-Bugs-To: arcus.rickert@web.de\n"
+"Project-Id-Version:  little-brother-taskbar\n"
+"Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-11 15:00+0100\n"
 "Last-Translator: albano battistella <albano_battistella@hotmail.com>\n"
@@ -39,11 +39,3 @@ msgstr "Tempo Illimitato"
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
 msgstr "Nessuna Attività Consentita"
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "Effettua il login per accedere a questa pagina."
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "Nome utente o password errati"
