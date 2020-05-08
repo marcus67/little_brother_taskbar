@@ -4,15 +4,29 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.7 (release, May 7th, 2020)
+
+*   Add Finnish localization (locale 'fi')
+*   Add Turkish localization (locale 'tr')
+*   Add Japanese localization (locale 'ja')
+*   Add Bangla localization (locale 'bn')
+*   Add French localization (locale 'fr')
+*   Add Thai localization (locale 'th')
+*   Add license file
+*   Suppress old spoken notifications upon login
+*   Upgrade to `python_base_app` 0.1.9
+*   Remove translations of `python_base_app` from Babel files
+*   Add README.md section on installation as desktop startup application 
+
 ## Version 0.1.6 (release, April 18th, 2020)
 
 *   Add Dutch localization (locale 'nl')
-*   Upgrade to python_base_app 0.1.8
+*   Upgrade to `python_base_app` 0.1.8
 
 ## Version 0.1.5 (release, April 12th, 2020)
 
 *   Optionally provide speech generation for notification messages
-*   Upgrade to python_base_app 0.1.6
+*   Upgrade to `python_base_app` 0.1.6
 
 ## Version 0.1.4 (release, April 10th, 2020)
 

@@ -18,12 +18,13 @@
 settings = {
     "name": "little-brother-taskbar",
     "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1.6",
-    "description": "Taskbar app display the remaining play time of users monitored by LittleBrother",
+    "version": "0.1.7",
+    "description": "Taskbar app displaying the remaining play time of users monitored by LittleBrother",
     "author": "Marcus Rickert",
     "author_email": "little-brother@web.de",
 }
 
 extended_settings = {
     "display_url": "github.com/marcus67/little_brother_taskbar",
+    "babel_rel_directory": "translations"
 }

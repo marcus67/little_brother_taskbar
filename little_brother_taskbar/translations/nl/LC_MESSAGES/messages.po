@@ -1,15 +1,15 @@
-# Dutch translations for PROJECT.
+# Dutch translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# Simone & Lex, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: little_brother_taskbar\n"
+"Project-Id-Version: LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: marcus.rickert@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
 "PO-Revision-Date: 2020-04-14 20:17+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Simone & Lex \n"
 "Language: nl\n"
 "Language-Team: nl <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"

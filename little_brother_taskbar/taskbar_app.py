@@ -138,23 +138,28 @@ class App(base_app.BaseApp):
                 self._audio_handler.notify(p_text=p_user_status.notification, p_locale=p_user_status.locale)
                 self._latest_notification = p_user_status.notification
 
+    def clear_notification(self):
+
+        self._latest_notification = None
 
     def update_status(self):
         self._logger.debug("update_status")
 
         user_status = self._status_connector.request_status(p_username=self._username)
 
-        if user_status is not None:
+        if user_status is None:
+            self.clear_notification()
 
+        else:
             if isinstance(user_status, str):
                 font = self._error_message_font
                 color = self._app_config.color_error
                 text = user_status
+                self.clear_notification()
 
             else:
 
                 self.set_locale(p_locale=user_status.locale)
-                self.speak_status(p_user_status=user_status)
 
                 font = self._status_font
 
@@ -163,6 +168,7 @@ class App(base_app.BaseApp):
                     font = self._error_message_font
                     fmt = self._("User '{username}' not logged in")
                     text = fmt.format(username=self._username)
+                    self.clear_notification()
 
                 elif user_status.activity_allowed:
                     if user_status.minutes_left_in_session is not None:
@@ -182,6 +188,10 @@ class App(base_app.BaseApp):
                 else:
                     color = self._app_config.color_warning
                     text = self._("No Activity Allowed")
+
+                if user_status.logged_in:
+                    self.speak_status(p_user_status=user_status)
+
 
             # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
             wx.CallAfter(self._static_text.SetFont, font)

@@ -1,18 +1,18 @@
-# French translations for LittleBrotherTaskbar.
+# Japanese translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
+# Arik Mahbub <arikmahbub@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-03-29 01:09+0100\n"
-"PO-Revision-Date: 2020-04-20 17:35+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
-"Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"PO-Revision-Date: 2020-04-20 09:47+0200\n"
+"Last-Translator: Arik Mahbub <arikmahbub@gmail.com>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,24 +20,23 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
 msgid "Cannot request user status using url '{url}'"
-msgstr "Impossible de demander le statut d'utilisateur à l'aide de l'url '{url}'"
+msgstr "URL '{url}' でユーザーステータスが要求されません"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
 msgid "User '{username}' not logged in"
-msgstr "L'utilisateur '{username}' n'est pas connecté"
+msgstr "ユーザー '{username}' さんはログインしていません"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
 msgstr ""
-"Temps restant:\n"
-"{minutes} minutes"
+"残る時間: {minutes}分"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid "Unlimited Time"
-msgstr "Temps illimité"
+msgstr "時間無制限"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
 msgid "No Activity Allowed"
-msgstr "Aucune activité autorisée"
+msgstr "活動禁止"
