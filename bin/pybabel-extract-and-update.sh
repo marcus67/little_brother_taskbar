@@ -27,6 +27,5 @@ fi
 
 PATH=${PATH}:${HOME}/.virtualenvs/little-brother-taskbar/bin
 pybabel extract -F "${BASE_DIR}/etc/babel.cfg" -o "${BASE_DIR}/etc/messages.pot" \
-        "${BASE_DIR}/little_brother_taskbar" \
-        "${BASE_DIR}/contrib/python_base_app/python_base_app"
+        "${BASE_DIR}/little_brother_taskbar"
 pybabel update -i "${BASE_DIR}/etc/messages.pot" -d "${BASE_DIR}/little_brother_taskbar/translations"
