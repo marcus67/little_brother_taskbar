@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-29 01:09+0100\n"
+"POT-Creation-Date: 2020-05-11 23:57+0200\n"
 "PO-Revision-Date: 2020-04-14 21:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -18,33 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:68
 msgid "Cannot request user status using url '{url}'"
-msgstr ""
+msgstr "No puedo demandar estatus de usuario usando url '{url}"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:169
 msgid "User '{username}' not logged in"
-msgstr ""
+msgstr "Usuario '{username}' no esta iniciado"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:175
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr ""
+msgstr "Quedan:\n{minutes} minutos"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:185
 msgid "Unlimited Time"
-msgstr ""
+msgstr "Tiempo ilimitado"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:190
 msgid "No Activity Allowed"
-msgstr ""
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr ""
-
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr ""
-
+msgstr "Ninguna actividad permitida"

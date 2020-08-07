@@ -101,7 +101,7 @@ class App(base_app.BaseApp):
 
         self.check_user_configuration_file()
 
-    def load_configuration(self, p_configuration):
+    def prepare_configuration(self, p_configuration):
 
         status_connector_section = status_connector.StatusConnectorConfigModel()
         p_configuration.add_section(status_connector_section)
@@ -113,7 +113,7 @@ class App(base_app.BaseApp):
         self._app_config = TaskBarAppConfigModel()
         p_configuration.add_section(self._app_config)
 
-        return super(App, self).load_configuration(p_configuration=p_configuration)
+        return super(App, self).prepare_configuration(p_configuration=p_configuration)
 
     def set_locale(self, p_locale):
 

@@ -4,6 +4,16 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.9 (release, August 4th, 2020)
+
+*   Upgrade to `python_base_app` 0.2.0
+
+## Version 0.1.8 (release, June 8th, 2020)
+
+*   Add Danish localization (locale 'da')
+*   Add Spanish localization (locale 'es')
+*   Upgrade to `python_base_app` 0.1.11
+
 ## Version 0.1.7 (release, May 7th, 2020)
 
 *   Add Finnish localization (locale 'fi')

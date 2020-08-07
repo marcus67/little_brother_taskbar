@@ -1,13 +1,13 @@
 # Dutch translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
+# This file is distributed under the same license as the  project.
 # Simone & Lex, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: LittleBrotherTaskbar\n"
+"Project-Id-Version:  LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: marcus.rickert@web.de\n"
-"POT-Creation-Date: 2020-03-29 01:09+0100\n"
+"POT-Creation-Date: 2020-05-11 23:57+0200\n"
 "PO-Revision-Date: 2020-04-14 20:17+0200\n"
 "Last-Translator: Simone & Lex \n"
 "Language: nl\n"
@@ -18,32 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:68
 msgid "Cannot request user status using url '{url}'"
 msgstr "Kan geen gebruikersstatus aanvragen met behulp van url '{url}'"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:169
 msgid "User '{username}' not logged in"
 msgstr "Gebruiker '{username}' niet ingelogd"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:175
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
 msgstr "Tijd over: {minutes} minuten"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:185
 msgid "Unlimited Time"
 msgstr "onbeperkte tijd"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:190
 msgid "No Activity Allowed"
 msgstr "Geen activiteit toegestaan"
 
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:34
-msgid "Please log in to access this page."
-msgstr "log in om toegang te krijgen voor deze pagina"
+#~ msgid "Please log in to access this page."
+#~ msgstr "log in om toegang te krijgen voor deze pagina"
 
-#: /home/mr/projects/little_brother_taskbar/contrib/python_base_app/python_base_app/auth_view_handler.py:135
-msgid "Wrong login or password"
-msgstr "Verkeerde login of wachtwoord"
+#~ msgid "Wrong login or password"
+#~ msgstr "Verkeerde login of wachtwoord"
+

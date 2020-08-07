@@ -51,8 +51,14 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 
 `LittleBrotherTaskbar` has the following features:
 
-*   Shows the status of a user monitored by [LittleBrother](https://github.com/marcus67/little_brother)
-*   More to come
+*   Shows the status (remaining play time) of a user monitored by 
+    [LittleBrother](https://github.com/marcus67/little_brother)
+    
+*   Plays spoken notifications about the status:
+    *   Session length upon login
+    *   Reason why login is denied
+    *   Warnings about impending logout
+    *   Reason why user will be logged out
 
 ## Prerequisites
 
@@ -76,16 +82,16 @@ application on your system.
 
 ### Install the Software
 
-`LittleBrotherTaskbar` is available as a Python3 [PIP package](https://pypi.org/project/little-brother-taskbar/). Make sure
-you have the Debian packages
+`LittleBrotherTaskbar` is available as a Python3 [PIP package](https://pypi.org/project/little-brother-taskbar/). Make 
+sure you have the Debian packages
 
 *   `libgtk-3-dev` 
 *   `libpulse-dev`
 
-installed on your system. Also, the required library `wxPython` cannot be compiled successfully with version of the
-`setuptools`. Version `40.8.0` seems to work fine. Issue 
+installed on your system. Also, the required library `wxPython` cannot be compiled successfully with some versions of 
+the `setuptools`. Version `40.8.0` seems to work fine. Issue 
 
-    pip install setuptools==40.8.0
+    pip3 install setuptools==40.8.0
 
 to install exactly this version. Then type
 
@@ -144,7 +150,7 @@ The tool recognizes the following extra options:
 
 ## Installing LittleBrotherTaskbar as a StartUp Application
 
-Once you have succeedef starting the tool on the command line (see above) it makes sense to install the tool as
+Once you have succeeded starting the tool on the command line (see above) it makes sense to install the tool as
 a startup application in your desktop environment. Most environments allow you to configure the applications which 
 are automatically started upon logging into the desktop. Below you will find screenshots to guide you through the
 installation on a 19.3 Ubuntu system using the Mate Desktop.
@@ -181,22 +187,22 @@ any trouble with installing and/or running the application.
 The application uses the PIP package `Flask-Babel` to provide internationalization for the web frontend, Currently, 
 the following languages are supported/prepared (in the order they were made available):
 
-| Flag                                                                                                                                    | Language      | Locale | Status         | Translation provided by |
-| ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ------------------------|
-| ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Available      |  Marcus Rickert         |
-| ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Available      |  Marcus Rickert         |
-| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella     |
-| ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex           |
-| ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | Available      |  Iisakki Kosonen        |
-| ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | Available      |  Selay Dogan            |
-| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | Available      |  J. Moldawski           |
-| ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | Available      |  Arik M.                |
-| ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | Available      |  Rownak Jyoti Zaman     |
-| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Available      |  Albano Battistella     |
-| ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | Available      |  Busaba Kramer          |
-| ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | In preparation |  N.N.                   |
-| ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                   |
-| ![Flag Croatia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/croatia-flag-icon-32.png)                  | Croatian      | hr     | In preparation |  N.N.                   |
+| Flag                                                                                                                                    | Language      | Locale | Status         | Translation provided by    |
+| ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ---------------------------|
+| ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Available      |  Marcus Rickert            |
+| ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Available      |  Marcus Rickert            |
+| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella        |
+| ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex              |
+| ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | Available      |  Iisakki Kosonen           |
+| ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | Available      |  Selay Dogan               |
+| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | Available      |  J. Moldawski              |
+| ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | Available      |  Arik M.                   |
+| ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | Available      |  Rownak Jyoti Zaman        |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Available      |  Albano Battistella        |
+| ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | Available      |  Busaba Kramer             |
+| ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | Available      |  Ruth Wucherpfennig-Krömer |
+| ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                      |
+| ![Flag Croatia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/croatia-flag-icon-32.png)                  | Croatian      | hr     | In preparation |  N.N.                      |
 
 Note that the spoken messages are provided by the `LittleBrother` master process. Check 
 [here](https://github.com/marcus67/little_brother) for the availability of desired foreign language. 
@@ -211,6 +217,8 @@ Note that the spoken messages are provided by the `LittleBrother` master process
 ![Screenshot Status in Bangla](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-bangla.png) 
 ![Screenshot Status in French](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-french.png) 
 ![Screenshot Status in Thai](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-thai.png) 
+![Screenshot Status in Danish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-danish.png) 
+![Screenshot Status in Spanish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-status-ok-spanish.png) 
 
 ### Sample Speech Audio Files
 
@@ -232,6 +240,10 @@ Note that the spoken messages are provided by the `LittleBrother` master process
 *   [Sample 2 in French](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-fr-2.mp3)
 *   [Sample 1 in Thai](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-th-1.mp3)
 *   [Sample 2 in Thai](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-th-2.mp3)
+*   [Sample 1 in Danish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-da-1.mp3)
+*   [Sample 2 in Danish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-da-2.mp3)
+*   [Sample 1 in Spanish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-es-1.mp3)
+*   [Sample 2 in Spanish](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/speech-sample-es-2.mp3)
 
 Your help with translations is greatly appreciated. Please, contact the author if you are interested in providing
 a translation. You do not necessarily have to clone this repository or be familiar with Python to do so.

@@ -1,13 +1,13 @@
 # Finnish translations for LittleBrotherTaskbar.
 # Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
+# This file is distributed under the same license as the  project.
 # Iisakki Kosonen, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: LittleBrotherTaskbar\n"
+"Project-Id-Version:  LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
-"POT-Creation-Date: 2020-03-29 01:09+0100\n"
+"POT-Creation-Date: 2020-05-11 23:57+0200\n"
 "PO-Revision-Date: 2020-04-19 11:47+0200\n"
 "Last-Translator: Iisakki Kosonen\n"
 "Language: fi\n"
@@ -18,25 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:71
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:68
 msgid "Cannot request user status using url '{url}'"
 msgstr "Ei voi pyytää käyttäjän statusta käyttäen nettiosoitetta '{url}'"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:123
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:169
 msgid "User '{username}' not logged in"
 msgstr "Käyttäjä '{username}' ei kirjautunut sisään"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:128
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:175
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr "Aikaa jäljellä:\n"
+msgstr ""
+"Aikaa jäljellä:\n"
 "{minutes} minuuttia"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:185
 msgid "Unlimited Time"
 msgstr "Rajoittamaton aika"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:143
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:190
 msgid "No Activity Allowed"
 msgstr "Mitään aktiviteettia ei sallittu"
+

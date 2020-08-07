@@ -1,17 +1,17 @@
-# Italian translations for LittleBrotherTaskbar.
-# Copyright (C) 2019 ORGANIZATION
-# This file is distributed under the same license as the  project.
-# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2019.
+# Danish translations for LittleBrotherTaskbar.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR Erik Husmark, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  little-brother-taskbar\n"
+"Project-Id-Version: LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-05-11 23:57+0200\n"
-"PO-Revision-Date: 2020-04-11 15:00+0100\n"
-"Last-Translator: albano battistella <albano_battistella@hotmail.com>\n"
-"Language: it\n"
-"Language-Team: it <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-11 23:55+0200\n"
+"Last-Translator: Erik Husmark\n"
+"Language: da\n"
+"Language-Team: da <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,25 +20,22 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:68
 msgid "Cannot request user status using url '{url}'"
-msgstr "Impossibile richiedere lo stato utente tramite url '{url}'"
+msgstr "Kan ikke hente brugerstatus via URL '{url}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:169
 msgid "User '{username}' not logged in"
-msgstr "User '{username}' accesso non effettuato"
+msgstr "Bruger '{username}' er ikke logget ind"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:175
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
-msgstr ""
-"Tempo rimasto:\n"
-"{minutes} minuti"
+msgstr "Tid tilbage: {minutes} minutter"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:185
 msgid "Unlimited Time"
-msgstr "Tempo Illimitato"
+msgstr "Ubegrænset tid"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:190
 msgid "No Activity Allowed"
-msgstr "Nessuna Attività Consentita"
-
+msgstr "Ingen aktivitet tilladt"
