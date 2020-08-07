@@ -4,6 +4,11 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.10 (release, August 8th, 2020)
+
+*   Set default locale to "en" 
+*   Add YouTube video
+
 ## Version 0.1.9 (release, August 4th, 2020)
 
 *   Upgrade to `python_base_app` 0.2.0

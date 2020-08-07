@@ -62,7 +62,7 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 
 ## Prerequisites
 
-`LittleBrotherTask` requires an active installation of [LittleBrother](https://github.com/marcus67/little_brother).
+`LittleBrotherTaskbar` requires an active installation of [LittleBrother](https://github.com/marcus67/little_brother).
 The taskbar client will contact the master process of `LittleBrother`. Also, some Linux packages have to be
 installed to enable the compilation of the Python PIP package `wxPython`. See the installation instructions below.
 
@@ -74,11 +74,19 @@ In case you want to use the MP3 speech generation for notification messages you 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
 | ------------ | ------------- | ---------------------------------------------------------------------- | ---------------- |
 | Debian       | testing       |                                                                        | 02.APR.2020      |
+| Ubuntu       | 19.3          |                                                                        | 08.AUG.2020      |
 
 ## Quick Install
 
 This guide will take you through the steps required to install, configure, and run the `LittleBrotherTaskbar` 
 application on your system. 
+
+### YouTube Video
+
+<A HREF="https://youtu.be/vLqho7oRNi4">![little-brother-0_3_1](doc/youtube-presentations/2020-08-07_LittleBrotherTaskbar_YouTube_Presentation.thumb.png) </A>
+
+There are more videos related to `LittleBrother` and `LittleBrotherTaskbar` available at 
+the [LittleBrother](https://github.com/marcus67/little_brother) homepage.
 
 ### Install the Software
 
