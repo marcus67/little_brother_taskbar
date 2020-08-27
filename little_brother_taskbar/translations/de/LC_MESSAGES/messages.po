@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  little-brother-taskbar\n"
 "Report-Msgid-Bugs-To: marcus.rickert@web.de\n"
-"POT-Creation-Date: 2020-05-11 23:57+0200\n"
+"POT-Creation-Date: 2020-08-27 23:00+0200\n"
 "PO-Revision-Date: 2019-02-27 23:25+0100\n"
 "Last-Translator: Marcus Rickert <marcus.rickert@web.de>\n"
 "Language: de\n"
@@ -27,15 +27,138 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:68
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog.py:66
+msgid "Error"
+msgstr "Fehler"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog.py:104
+msgid "Numeric value expected"
+msgstr "Numerischer Wert erwartet"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog.py:136
+msgid "Exception '{exception}' while parsing options"
+msgstr "Ausnamhme '{exception}' beim Parsen der Optionen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:28
+msgid "LittleBrotherTaskbar Configuration"
+msgstr "LittleBrotherTaskbar Konfiguration"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:32
+msgid "Timings"
+msgstr "Zeiteinstellungen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:38
+msgid "Check Interval [seconds]"
+msgstr "Prüfintervall [Sekunden]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:42
+msgid "Set the time in seconds between two status checks of LittleBrother."
+msgstr "Setze die Zeit in Sekunden zwischen zwei Statusabfragen von LittleBrother"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:45
+msgid "Warning Time Before Logout [minutes]"
+msgstr "Warnungszeit vor dem Logout [Minuten]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:49
+msgid ""
+"Set the time in minutes before logout when notifications will start "
+"appearing."
+msgstr "Setze die Zeit in Minuten vor dem Logout ab der die Benachrichtungen erscheinen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:52
+msgid "Colors"
+msgstr "Farben"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:61
+msgid "Foreground"
+msgstr "Vordergrund"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:64
+msgid "Background"
+msgstr "Hintergrund"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:67
+msgid "Error Message"
+msgstr "Fehlermeldungen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:76
+msgid "Warning Message"
+msgstr "Warnungen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:85
+msgid "Normal Mode"
+msgstr "Normaler Modus"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:94
+msgid "Approaching Logout"
+msgstr "Nahender Logout"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:103
+msgid "Font Sizes"
+msgstr "Zeichensatzgrößen"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:109
+msgid "Status Messages [pixel]"
+msgstr "Statusmeldungen [Pixel]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:115
+msgid "Error Messages [pixel]"
+msgstr "Fehlermeldungen [Pixel]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:121
+msgid "Window Size"
+msgstr "Fenstergröße"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:127
+msgid "Width [pixel]"
+msgstr "Breite [Pixel]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:133
+msgid "Height [pixel]"
+msgstr "Höhe [Pixel]"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:139
+msgid "Behavior"
+msgstr "Verhalten"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:145
+msgid "Show Window Upon Start"
+msgstr "Zeige das Fenster beim Start"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:151
+msgid "Show Window When Approaching Logout"
+msgstr "Zeige das Fenster bei nahendem Logout"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:160
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:163
+msgid "OK"
+msgstr "OK"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:66
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:73
 msgid "Cannot request user status using url '{url}'"
 msgstr "Kann den Benutzerstatus nicht über URL '{url}' ermitteln"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:169
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:50
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:51
+msgid "Exit"
+msgstr "Beenden"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:77
+msgid "Invalid Input"
+msgstr "Ungültige Eingabe"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:132
 msgid "User '{username}' not logged in"
 msgstr "Benutzer '{username}' nicht eingeloggt"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:175
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
@@ -43,11 +166,10 @@ msgstr ""
 "Zeit übrig:\n"
 "{minutes} Minuten"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:185
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:153
 msgid "Unlimited Time"
 msgstr "Unbegrenzte Zeit"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:190
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:159
 msgid "No Activity Allowed"
 msgstr "Kein Zeit verfügbar"
-

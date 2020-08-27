@@ -184,6 +184,15 @@ installation on a 19.3 Ubuntu system using the Mate Desktop.
 So, you went through all of the above but `LittleBrotherTaskbar` does not seem to work? Maybe this 
 [troubleshooting page](https://github.com/marcus67/little_brother_taskbar/blob/master/TROUBLESHOOTING.md) can help you.
 
+## Configuration
+
+Most settings of the application can be configured using the configuration dialog which reached using the right
+mouse click on the tray icon:
+
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog.png)
+
+The configuration will be saved to (and subsequently loaded from) the file `~/.config/LittleBrotherTaskbar.conf`. 
+
 ## Caveats
 
 The application `LittleBrotherTaskbar` is far from perfect. Issues are listed on GitHub 
@@ -197,18 +206,18 @@ the following languages are supported/prepared (in the order they were made avai
 
 | Flag                                                                                                                                    | Language      | Locale | Status         | Translation provided by    |
 | ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ---------------------------|
-| ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Available      |  Marcus Rickert            |
-| ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Available      |  Marcus Rickert            |
-| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Available      |  Albano Battistella        |
-| ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | Available      |  Simone & Lex              |
-| ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | Available      |  Iisakki Kosonen           |
-| ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | Available      |  Selay Dogan               |
-| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | Available      |  J. Moldawski              |
-| ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | Available      |  Arik M.                   |
-| ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | Available      |  Rownak Jyoti Zaman        |
-| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Available      |  Albano Battistella        |
-| ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | Available      |  Busaba Kramer             |
-| ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | Available      |  Ruth Wucherpfennig-Krömer |
+| ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Up-to-date     |  Marcus Rickert            |
+| ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Up-to-date     |  Marcus Rickert            |
+| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | 0.1.10         |  Albano Battistella        |
+| ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | 0.1.10         |  Simone & Lex              |
+| ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | 0.1.10         |  Iisakki Kosonen           |
+| ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | 0.1.10         |  Selay Dogan               |
+| ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | 0.1.10         |  J. Moldawski              |
+| ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | 0.1.10         |  Arik M.                   |
+| ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | 0.1.10         |  Rownak Jyoti Zaman        |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | 0.1.10         |  Albano Battistella        |
+| ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | 0.1.10         |  Busaba Kramer             |
+| ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | 0.1.10         |  Ruth Wucherpfennig-Krömer |
 | ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                      |
 | ![Flag Croatia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/croatia-flag-icon-32.png)                  | Croatian      | hr     | In preparation |  N.N.                      |
 
@@ -267,3 +276,5 @@ and the libraries on [PyPi](https://pypi.org/).
 
 *   The site [www.mehr-schulferien.de](https://www.mehr-schulferien.de) maintains the vacation metadata for
 Germany.
+
+*   The configuration dialog was generated using [wxGlade](https://github.com/wxGlade/wxGlade).

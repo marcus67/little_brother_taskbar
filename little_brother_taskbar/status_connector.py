@@ -59,8 +59,13 @@ class StatusConnector(base_rest_api_access.BaseRestAPIAccess):
                                           p_attribute_classes={})
 
         except exceptions.ArtifactNotFoundException as e:
-            fmt = self._(e.result_document[constants.JSON_ERROR])
-            result = fmt.format(username=p_username)
+            if e.result_document is not None:
+                fmt = self._(e.result_document[constants.JSON_ERROR])
+
+            else:
+                fmt = self._("Cannot request user status using url '{url}'")
+
+            result = fmt.format(username=p_username, url=self._get_api_url())
             self._logger.warning(result)
 
         except Exception:

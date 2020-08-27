@@ -23,55 +23,22 @@ import threading
 import wx
 import wx.adv
 
+from typing import Optional
+
 from little_brother_taskbar import status_connector
 from little_brother_taskbar import taskbar
+from little_brother_taskbar import configuration_model
 from python_base_app import base_app
 from python_base_app import configuration
 from python_base_app import audio_handler
-
-APP_NAME = 'LittleBrotherTaskbar'
-DEFAULT_UPDATE_INTERVAL = 5
-DEFAULT_STATUS_FONT_SIZE = 24
-DEFAULT_ERROR_MESSAGE_FONT_SIZE = 12
-DEFAULT_SHOW_ON_START = True
-DEFAULT_COLOR_NORMAL_MODE = "lightgreen"
-DEFAULT_COLOR_APPROACHING_LOGOUT = "red"
-DEFAULT_COLOR_WARNING = "yellow"
-DEFAULT_COLOR_ERROR = "red"
-DEFAULT_MINUTES_APPROACHING_LOGOUT = 5
-DEFAULT_WINDOW_WIDTH = 320
-DEFAULT_WINDOW_HEIGHT = 110
-DEFAULT_LOCALE = "en"
-
-
-# Dummy function to trigger extraction by pybabel...
-# _ = lambda x, y=None: x
-
-
-class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
-
-    def __init__(self):
-        """Class for configuration of class `App`."""
-        super().__init__(APP_NAME)
-
-        self.check_interval = DEFAULT_UPDATE_INTERVAL
-        self.status_font_size = DEFAULT_STATUS_FONT_SIZE
-        self.error_message_font_size = DEFAULT_ERROR_MESSAGE_FONT_SIZE
-        self.window_width = DEFAULT_WINDOW_WIDTH
-        self.window_height = DEFAULT_WINDOW_HEIGHT
-        self.show_on_start = DEFAULT_SHOW_ON_START
-        self.color_normal_mode = DEFAULT_COLOR_NORMAL_MODE
-        self.color_warning = DEFAULT_COLOR_WARNING
-        self.color_error = DEFAULT_COLOR_ERROR
-        self.color_approaching_logout = DEFAULT_COLOR_APPROACHING_LOGOUT
-        self.minutes_approaching_logout = DEFAULT_MINUTES_APPROACHING_LOGOUT
-        self.locale = DEFAULT_LOCALE
+from python_base_app import locale_helper
 
 
 def get_argument_parser(p_app_name):
     parser = base_app.get_argument_parser(p_app_name=p_app_name)
     parser.add_argument('--server-url', dest='server_url', action='store',
-                        help='Set the URL to retrieve user status')
+                        help='Set the URL to retrieve user status',
+                        default="http://localhost:5555")
     parser.add_argument('--username', dest='username', action='store',
                         help='Set the username to request the status for')
     parser.add_argument('--locale', dest='locale', action='store',
@@ -91,10 +58,10 @@ class App(base_app.BaseApp):
 
         self._wx_app = wx.App(useBestVisual=True)
         self._app_config = None
-        self._status_frame = None
+        self._status_frame : Optional[wx.Frame] = None
         self._status_connector = None
         self._audio_handler = None
-        self._tasktar_process = None
+        self._taskbar_process = None
         self._username = None
         self._latest_notification = None
         self._locale = None
@@ -110,7 +77,7 @@ class App(base_app.BaseApp):
         audio_handler_section.spool_dir = "/tmp"
         p_configuration.add_section(audio_handler_section)
 
-        self._app_config = TaskBarAppConfigModel()
+        self._app_config = configuration_model.TaskBarAppConfigModel()
         p_configuration.add_section(self._app_config)
 
         return super(App, self).prepare_configuration(p_configuration=p_configuration)
@@ -118,9 +85,6 @@ class App(base_app.BaseApp):
     def set_locale(self, p_locale):
 
         if self._locale is None or p_locale != self._locale:
-            localedir = os.path.join(os.path.dirname(__file__), "translations")
-            self._lang = gettext.translation("messages", localedir=localedir,
-                                             languages=[p_locale], fallback=True)
             if self._locale is None:
                 fmt = "Using locale '{locale}'"
 
@@ -128,7 +92,6 @@ class App(base_app.BaseApp):
                 fmt = "Switching to locale '{locale}'"
 
             self._logger.info(fmt.format(locale=p_locale))
-            self._ = self._lang.gettext
             self._locale = p_locale
 
     def speak_status(self, p_user_status):
@@ -153,18 +116,18 @@ class App(base_app.BaseApp):
         else:
             if isinstance(user_status, str):
                 font = self._error_message_font
-                color = self._app_config.color_error
+                color = self._color_error_message
+                color_foreground = self._color_error_message_foreground
                 text = user_status
                 self.clear_notification()
 
             else:
-
                 self.set_locale(p_locale=user_status.locale)
-
                 font = self._status_font
 
                 if not user_status.logged_in:
-                    color = self._app_config.color_warning
+                    color = self._color_warning_message
+                    color_foreground = self._color_warning_message_foreground
                     font = self._error_message_font
                     fmt = self._("User '{username}' not logged in")
                     text = fmt.format(username=self._username)
@@ -175,18 +138,24 @@ class App(base_app.BaseApp):
                         fmt = self._("Time left:\n{minutes} minutes")
                         text = fmt.format(minutes=user_status.minutes_left_in_session)
 
-                        if user_status.minutes_left_in_session <= self._app_config.minutes_approaching_logout:
-                            color = self._app_config.color_approaching_logout
+                        if user_status.minutes_left_in_session <= self._app_config.warning_minutes_approaching_logout:
+                            color = self._color_approaching_logout
+                            color_foreground = self._color_approaching_logout_foreground
+
+                            if self._app_config.show_window_when_approaching_logout:
+                                self._status_frame.Show(True)
 
                         else:
-                            color = self._app_config.color_normal_mode
+                            color = self._color_normal_mode
+                            color_foreground = self._color_normal_mode_foreground
 
                     else:
                         text = self._("Unlimited Time")
-                        color = self._app_config.color_normal_mode
+                        color = self._color_normal_mode
+                        color_foreground = self._color_normal_mode_foreground
 
                 else:
-                    color = self._app_config.color_warning
+                    color = self._color_warning_message
                     text = self._("No Activity Allowed")
 
                 if user_status.logged_in:
@@ -195,10 +164,44 @@ class App(base_app.BaseApp):
 
             # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
             wx.CallAfter(self._static_text.SetFont, font)
-            wx.CallAfter(self._status_frame.SetBackgroundColour, wx.Colour(color))
-            wx.CallAfter(self._static_text.SetBackgroundColour, wx.Colour(color))
+            wx.CallAfter(self._status_frame.SetBackgroundColour, color)
+            wx.CallAfter(self._static_text.SetBackgroundColour, color)
+            wx.CallAfter(self._static_text.SetForegroundColour, color_foreground)
             wx.CallAfter(self._static_text.SetLabel, text)
             wx.CallAfter(self._static_text.Wrap, self._app_config.window_width)
+
+    def evaluate_configuration(self):
+
+        if self._status_frame is None:
+            self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=configuration_model.APP_NAME,
+                                          style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
+                                          size=(self._app_config.window_width, self._app_config.window_height))
+            self._status_frame.Bind(wx.EVT_LEFT_UP, lambda x:self._status_frame.Show(False))
+            icon = wx.NullIcon
+            icon_path = os.path.join(os.path.dirname(__file__), "static/icons/little-brother-taskbar-logo_32x32.bmp")
+            icon.CopyFromBitmap(wx.Bitmap(icon_path, wx.BITMAP_TYPE_BMP))
+            self._status_frame.SetIcon(icon)
+
+
+        else:
+            self._status_frame.SetSize(size=(self._app_config.window_width, self._app_config.window_height))
+
+        # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
+        self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
+                                    False, u'Consolas')
+        self._error_message_font = wx.Font(self._app_config.error_message_font_size,
+                                           wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Consolas')
+
+        self._color_warning_message = wx.Colour(self._app_config.color_warning_message)
+        self._color_error_message = wx.Colour(self._app_config.color_error_message)
+        self._color_normal_mode = wx.Colour(self._app_config.color_normal_mode)
+        self._color_approaching_logout = wx.Colour(self._app_config.color_approaching_logout)
+
+        self._color_warning_message_foreground = wx.Colour(self._app_config.color_warning_message_foreground)
+        self._color_error_message_foreground = wx.Colour(self._app_config.color_error_message_foreground)
+        self._color_normal_mode_foreground = wx.Colour(self._app_config.color_normal_mode_foreground)
+        self._color_approaching_logout_foreground = wx.Colour(self._app_config.color_approaching_logout_foreground)
+
 
     def prepare_services(self, p_full_startup=True):
 
@@ -222,6 +225,13 @@ class App(base_app.BaseApp):
 
         if current_locale is None:
             (current_locale, _encoding) = locale.getdefaultlocale()
+
+        locale_dir = os.path.join(os.path.dirname(__file__), "translations")
+
+        self._locale_helper = locale_helper.LocaleHelper(p_locale_dir=locale_dir,
+                                                         p_locale_selector=lambda : self._locale)
+
+        self._ = self._locale_helper.gettext
 
         self.set_locale(p_locale=current_locale)
 
@@ -247,24 +257,17 @@ class App(base_app.BaseApp):
                                       p_interval=self._app_config.check_interval)
         self.add_recurring_task(p_recurring_task=task)
 
-        self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=APP_NAME,
-                                      style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
-                                      size=(self._app_config.window_width, self._app_config.window_height))
+        self.evaluate_configuration()
 
         self._static_text = wx.StaticText(self._status_frame, id=wx.ID_ANY,
                                           style=wx.ALIGN_CENTER | wx.ALIGN_CENTER_VERTICAL)
 
-        # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
-        self._status_font = wx.Font(self._app_config.status_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
-                                    False, u'Consolas')
-        self._error_message_font = wx.Font(self._app_config.error_message_font_size,
-                                           wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Consolas')
-
         self.update_status()
-        self._status_frame.Show(self._app_config.show_on_start)
+        self._status_frame.Show(self._app_config.show_window_upon_start)
 
         self._icon = taskbar.TaskBarIcon(p_config=self._app_config, p_status_frame=self._status_frame,
-                                         p_base_app=self)
+                                         p_base_app=self, p_gettext=self._locale_helper.gettext,
+                                         p_configuration_model=self._app_config)
 
         self._taskbar_process = threading.Thread(target=self._wx_app.MainLoop)
         self._taskbar_process.start()
@@ -282,11 +285,17 @@ class App(base_app.BaseApp):
             self._taskbar_process.join()
             self._taskbar_process = None
 
+    def reevaluate_configuration(self):
+
+        super().reevaluate_configuration()
+        self.evaluate_configuration()
+        self.update_status()
+
 
 def main():
-    parser = get_argument_parser(p_app_name=APP_NAME)
+    parser = get_argument_parser(p_app_name=configuration_model.APP_NAME)
 
-    return base_app.main(p_app_name=APP_NAME, p_app_class=App, p_argument_parser=parser)
+    return base_app.main(p_app_name=configuration_model.APP_NAME, p_app_class=App, p_argument_parser=parser)
 
 
 if __name__ == '__main__':
