@@ -16,6 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import re
+
 import wx
 
 from little_brother_taskbar import configuration_dialog_wxglade
@@ -32,15 +33,18 @@ DEFAULT_INVALID_FIELD_COLOR = "pink"
 GRID_GAP_X = 5
 GRID_GAP_Y = 5
 
+
 # See https://stackoverflow.com/questions/2198903/wx-textctrl-and-wx-validator/3405979
 class TextObjectValidator(wx.Validator):
+
     """ This validator is used to ensure that the user has entered something
         into the text object editor dialog's text field.
     """
 
     def __init__(self, p_pattern, p_error_message, p_gettext):
-        """ Standard constructor.
-        """
+
+        """ Standard constructor."""
+
         wx.Validator.__init__(self)
         self._pattern = p_pattern
         self._error_message = p_error_message
@@ -48,6 +52,7 @@ class TextObjectValidator(wx.Validator):
         self._ = p_gettext
 
     def Clone(self):
+
         """ Standard cloner.
 
             Note that every validator must implement the Clone() method.
@@ -57,24 +62,25 @@ class TextObjectValidator(wx.Validator):
     def Validate(self, win):
         """ Validate the contents of the given text control.
         """
-        textCtrl = self.GetWindow()
-        text = textCtrl.GetValue()
+        text_ctrl = self.GetWindow()
+        text = text_ctrl.GetValue()
 
         match = self._pattern_re.match(text)
 
         if match is None:
-            wx.MessageBox(self._error_message, self._("Error"), parent=textCtrl)
-            textCtrl.SetBackgroundColour(DEFAULT_INVALID_FIELD_COLOR)
-            textCtrl.SetFocus()
-            textCtrl.Refresh()
+            wx.MessageBox(self._error_message, self._("Error"), parent=text_ctrl)
+            text_ctrl.SetBackgroundColour(DEFAULT_INVALID_FIELD_COLOR)
+            text_ctrl.SetFocus()
+            text_ctrl.Refresh()
             return False
 
         else:
-            textCtrl.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOW))
-            textCtrl.Refresh()
+            text_ctrl.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOW))
+            text_ctrl.Refresh()
             return True
 
     def TransferToWindow(self):
+
         """ Transfer data from validator to window.
 
             The default implementation returns False, indicating that an error
@@ -83,6 +89,7 @@ class TextObjectValidator(wx.Validator):
         return True  # Prevent wxDialog from complaining.
 
     def TransferFromWindow(self):
+
         """ Transfer data from window to validator.
 
             The default implementation returns False, indicating that an error
