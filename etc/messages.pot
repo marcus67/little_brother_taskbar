@@ -1,18 +1,17 @@
-# French translations for LittleBrotherTaskbar.
+# Translations template for PROJECT.
 # Copyright (C) 2020 ORGANIZATION
-# This file is distributed under the same license as the  project.
-# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2020.
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  LittleBrotherTaskbar\n"
-"Report-Msgid-Bugs-To: little-brother@web.de\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2020-08-27 23:00+0200\n"
-"PO-Revision-Date: 2020-04-20 17:35+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
-"Language: fr\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,7 +130,7 @@ msgstr ""
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:66
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:73
 msgid "Cannot request user status using url '{url}'"
-msgstr "Impossible de demander le statut d'utilisateur à l'aide de l'url '{url}'"
+msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:50
 msgid "Configuration"
@@ -147,30 +146,19 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:132
 msgid "User '{username}' not logged in"
-msgstr "L'utilisateur '{username}' n'est pas connecté"
+msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
 msgstr ""
-"Temps restant:\n"
-"{minutes} minutes"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:153
 msgid "Unlimited Time"
-msgstr "Temps illimité"
+msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:159
 msgid "No Activity Allowed"
-msgstr "Aucune activité autorisée"
-
-#~ msgid "Colors"
-#~ msgstr ""
-
-#~ msgid "Background Colors"
-#~ msgstr ""
-
-#~ msgid "LittleBrotherConfiguration Configuration"
-#~ msgstr ""
+msgstr ""
 

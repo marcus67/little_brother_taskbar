@@ -4,6 +4,22 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.11 (release, August 27th, 2020)
+
+*   Use LocaleHelper
+*   More consistent naming of configurations options and variables
+*   Closes #1, see [here](https://github.com/marcus67/little_brother_taskbar/issues/1)
+*   Closes #2, see [here](https://github.com/marcus67/little_brother_taskbar/issues/2)
+*   Closes #5, see [here](https://github.com/marcus67/little_brother_taskbar/issues/5)
+*   Closes #12, see [here](https://github.com/marcus67/little_brother_taskbar/issues/12)
+*   Closes #14, see [here](https://github.com/marcus67/little_brother_taskbar/issues/14)
+*   Upgrade to `python_base_app` 0.2.1
+
+## Version 0.1.10 (release, August 8th, 2020)
+
+*   Set default locale to "en" 
+*   Add YouTube video
+
 ## Version 0.1.9 (release, August 4th, 2020)
 
 *   Upgrade to `python_base_app` 0.2.0

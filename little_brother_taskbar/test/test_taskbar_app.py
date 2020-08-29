@@ -20,14 +20,14 @@
 
 import unittest
 
-from little_brother_taskbar import taskbar_app
+from little_brother_taskbar import configuration_model
 from python_base_app.test import base_test
 
 
 class TestTaskbarApp(base_test.BaseTestCase):
 
     def test_config_model(self):
-        a_config = taskbar_app.TaskBarAppConfigModel()
+        a_config = configuration_model.TaskBarAppConfigModel()
         self.assertIsNotNone(a_config)
 
 

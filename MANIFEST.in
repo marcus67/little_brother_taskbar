@@ -19,5 +19,6 @@
 include requirements.txt
 include README.md
 include little_brother_taskbar/static/icons/*.png
+include little_brother_taskbar/static/icons/*.bmp
 #include little_brother_taskbar/test/resources/*
 include little_brother_taskbar/translations/*/*/messages.mo
