@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.12 (release, September 7th, 2020)
+
+*   Closes #17, see [here](https://github.com/marcus67/little_brother_taskbar/issues/17)
+
 ## Version 0.1.11 (release, August 27th, 2020)
 
 *   Use LocaleHelper

@@ -33,6 +33,8 @@ from python_base_app import configuration
 from python_base_app import audio_handler
 from python_base_app import locale_helper
 
+UTF_LOUDSPEAKER = "🔊"
+UTF_MUTED_LOUDSPEAKER = "🔇"
 
 def get_argument_parser(p_app_name):
     parser = base_app.get_argument_parser(p_app_name=p_app_name)
@@ -158,7 +160,7 @@ class App(base_app.BaseApp):
                     color = self._color_warning_message
                     text = self._("No Activity Allowed")
 
-                if user_status.logged_in:
+                if user_status.logged_in and self._app_config.enable_spoken_notifications:
                     self.speak_status(p_user_status=user_status)
 
 
@@ -172,8 +174,14 @@ class App(base_app.BaseApp):
 
     def evaluate_configuration(self):
 
+        if self._app_config.enable_spoken_notifications:
+            window_title = configuration_model.APP_NAME + " " + UTF_LOUDSPEAKER
+
+        else:
+            window_title = configuration_model.APP_NAME + " " + UTF_MUTED_LOUDSPEAKER
+
         if self._status_frame is None:
-            self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=configuration_model.APP_NAME,
+            self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=window_title,
                                           style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
                                           size=(self._app_config.window_width, self._app_config.window_height))
             self._status_frame.Bind(wx.EVT_LEFT_UP, lambda x:self._status_frame.Show(False))
@@ -185,6 +193,7 @@ class App(base_app.BaseApp):
 
         else:
             self._status_frame.SetSize(size=(self._app_config.window_width, self._app_config.window_height))
+            self._status_frame.SetTitle(window_title)
 
         # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
         self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,

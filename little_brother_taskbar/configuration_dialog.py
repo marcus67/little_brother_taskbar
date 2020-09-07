@@ -139,6 +139,12 @@ class ConfigurationDialog(configuration_dialog_wxglade.ConfigurationDialog):
             p_configuration_model.window_height = int(self._text_ctrl_window_height.GetValue())
             p_configuration_model.window_width = int(self._text_ctrl_window_width.GetValue())
 
+            p_configuration_model.show_window_upon_start = self._checkbox_show_window_upon_start.GetValue()
+            p_configuration_model.show_window_when_approaching_logout = \
+                self._checkbox_show_window_when_approaching_logout.GetValue()
+            p_configuration_model.enable_spoken_notifications = self._checkbox_enable_spoken_notifications.GetValue()
+
+
         except Exception as e:
             fmt = self._("Exception '{exception}' while parsing options")
             msg = fmt.format(exception=str(e))
@@ -173,3 +179,4 @@ class ConfigurationDialog(configuration_dialog_wxglade.ConfigurationDialog):
         self._checkbox_show_window_upon_start.SetValue(p_configuration_model.show_window_upon_start)
         self._checkbox_show_window_when_approaching_logout.SetValue(
             p_configuration_model.show_window_when_approaching_logout)
+        self._checkbox_enable_spoken_notifications.SetValue(p_configuration_model.enable_spoken_notifications)
