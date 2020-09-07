@@ -159,6 +159,7 @@ class App(base_app.BaseApp):
 
                 else:
                     color = self._color_warning_message
+                    color_foreground = self._color_normal_mode_foreground
                     text = self._("No Activity Allowed")
 
                 if user_status.logged_in and self._app_config.enable_spoken_notifications:
