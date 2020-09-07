@@ -23,6 +23,7 @@ DEFAULT_STATUS_FONT_SIZE = 24
 DEFAULT_ERROR_MESSAGE_FONT_SIZE = 12
 DEFAULT_SHOW_WINDOW_UPON_START = True
 DEFAULT_SHOW_WINDOW_WHEN_APPROACHING_LOGOUT = True
+DEFAULT_ENABLE_SPOKEN_NOTIFICATIONS = True
 DEFAULT_COLOR_NORMAL_MODE = "rgb(138, 226, 52)"
 DEFAULT_COLOR_APPROACHING_LOGOUT = "rgb(114, 159, 207)"
 DEFAULT_COLOR_WARNING_MESSAGE = "rgb(252, 175, 62)"
@@ -47,6 +48,7 @@ class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
         self.window_height = DEFAULT_WINDOW_HEIGHT
         self.show_window_upon_start = DEFAULT_SHOW_WINDOW_UPON_START
         self.show_window_when_approaching_logout = DEFAULT_SHOW_WINDOW_WHEN_APPROACHING_LOGOUT
+        self.enable_spoken_notifications = DEFAULT_ENABLE_SPOKEN_NOTIFICATIONS
         self.color_normal_mode = DEFAULT_COLOR_NORMAL_MODE
         self.color_warning_message = DEFAULT_COLOR_WARNING_MESSAGE
         self.color_error_message = DEFAULT_COLOR_ERROR_MESSAGE
