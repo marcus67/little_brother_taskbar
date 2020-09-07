@@ -108,6 +108,7 @@ class App(base_app.BaseApp):
         self._latest_notification = None
 
     def update_status(self):
+
         self._logger.debug("update_status")
 
         user_status = self._status_connector.request_status(p_username=self._username)
@@ -185,6 +186,7 @@ class App(base_app.BaseApp):
                                           style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
                                           size=(self._app_config.window_width, self._app_config.window_height))
             self._status_frame.Bind(wx.EVT_LEFT_UP, lambda x:self._status_frame.Show(False))
+            self._status_frame.Bind(wx.EVT_CLOSE, lambda x:self._status_frame.Show(False))
             icon = wx.NullIcon
             icon_path = os.path.join(os.path.dirname(__file__), "static/icons/little-brother-taskbar-logo_32x32.bmp")
             icon.CopyFromBitmap(wx.Bitmap(icon_path, wx.BITMAP_TYPE_BMP))

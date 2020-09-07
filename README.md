@@ -208,7 +208,7 @@ the following languages are supported/prepared (in the order they were made avai
 | ----------------------------------------------------------------------------------------------------------------------------------------| ------------- | ------ | -------------- | ---------------------------|
 | ![Flag USA](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/united-states-of-america-flag-icon-32.png)     | English       | en     | Up-to-date     |  Marcus Rickert            |
 | ![Flag Germany](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/germany-flag-icon-32.png)                  | German        | de     | Up-to-date     |  Marcus Rickert            |
-| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | 0.1.10         |  Albano Battistella        |
+| ![Flag Italy](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/italy-flag-icon-32.png)                      | Italian       | it     | Up-to-date     |  Albano Battistella        |
 | ![Flag Netherlands](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/netherlands-flag-icon-32.png)          | Dutch         | nl     | 0.1.10         |  Simone & Lex              |
 | ![Flag Finland](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/finland-flag-icon-32.png)                  | Finnish       | fi     | 0.1.10         |  Iisakki Kosonen           |
 | ![Flag Turkey](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/turkey-flag-icon-32.png)                    | Turkish       | tr     | 0.1.10         |  Selay Dogan               |
