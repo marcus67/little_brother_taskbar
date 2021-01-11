@@ -37,11 +37,11 @@ jobs:
 
       - run: PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage BUILD --use-dev-dir=.
       - store_artifacts:
-          path: "dist/little-brother-taskbar-0.1.12.tar.gz"
+          path: "dist/little-brother-taskbar-0.1.13.tar.gz"
       - persist_to_workspace:
           root: dist
           paths:
-            - "little-brother-taskbar-0.1.12.tar.gz"
+            - "little-brother-taskbar-0.1.13.tar.gz"
   install_pypi:
     #working_directory: ~
     docker:

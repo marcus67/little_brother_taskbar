@@ -18,7 +18,7 @@
 settings = {
     "name": "little-brother-taskbar",
     "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "description": "Taskbar app displaying the remaining play time of users monitored by LittleBrother",
     "author": "Marcus Rickert",
     "author_email": "little-brother@web.de",
