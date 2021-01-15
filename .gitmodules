@@ -1,3 +1,3 @@
 [submodule "contrib/python_base_app"]
 	path = contrib/python_base_app
-	url = https://github.com/marcus67/python_base_app.git
+	url = ../python_base_app.git
