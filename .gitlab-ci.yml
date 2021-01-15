@@ -25,31 +25,33 @@ stages:
 - build
 - install_and_check
 
-
-make_debian_package:
+build_pypi:
   image: accso/docker-python-app:latest
   stage: build
   script:
-  - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage BUILD --use-dev-dir=.
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage BUILD --use-dev-dir=.
+  after_script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEARDOWN
   artifacts:
-    paths:
-    - debian/*.deb
-  variables:
-    # Activate automatic checkout for all sub modules
-    GIT_SUBMODULE_STRATEGY: recursive
-
-check_installation:
-  image: accso/docker-python-app:latest
-  stage: install_and_check
-  script:
-  - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage INSTALL
-  - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEST --run-dir=/tmp 
-  artifacts:
-    when: always
-    paths:
-    - /var/log/little-brother-taskbar/*.log*
-    - ./htmlcov/*
+      when: always
+      paths:
+        - dist/little-brother-taskbar-0.1.13.tar.gz
   variables:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive
 
+install_pypi:
+  image: accso/docker-python-app:latest
+  stage: install_and_check
+  script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage INSTALL-PYPI-PACKAGE --use-dev-dir=.
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEST --use-dev-dir .
+  after_script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEARDOWN
+  artifacts:
+      when: always
+      paths:
+        - htmlcov
+  variables:
+    # Suppress automatic checkout for all sub modules
+    GIT_SUBMODULE_STRATEGY: recursive
