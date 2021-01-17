@@ -58,7 +58,8 @@ extended_setup_params = {
     # technical name used for e.g. directories, PIP-package, and users
     "build_debian_package" : False,
     "build_pypi_package": True,
-    "publish_pypi_package": ['release'],
+    "publish_pypi_package": { 'release': ( 'https://pypi.org', 'PYPI_API_TOKEN' ),
+                              'master': ( 'https://test.pypi.org/legacy/', 'TEST_PYPI_API_TOKEN') }
 }
 
 setup_params.update(little_brother_taskbar.settings.settings)
