@@ -92,3 +92,4 @@ workflows:
               branches:
                 only:
                   - release
+                  - master
