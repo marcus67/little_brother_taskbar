@@ -10,6 +10,7 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 *   Closes #18, see [here](https://github.com/marcus67/little_brother_taskbar/issues/18)
 *   Add icon in window header to show whether spoken notifications are enabled
 *   Update Italian localization
+*   Upgrade to `python_base_app` 0.2.10
 
 ## Version 0.1.11 (release, August 27th, 2020)
 
