@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.14 (release, January 26th, 2021)
+
+*   Fix wrong release branch (some changes from master branch were missing)
+
 ## Version 0.1.13 (release, January 26th, 2021)
 
 *   Update `wxPython` to 4.1.1 (this solves problem with compilation error of `wxPython` for current `setuptools`)
