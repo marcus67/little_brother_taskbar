@@ -4,14 +4,17 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.13 (release, January 26th, 2021)
+
+*   Upgrade to `python_base_app` 0.2.10
+*   Correct URLs for test.pypi.org and pypi.org
+
 ## Version 0.1.12 (release, September 7th, 2020)
 
 *   Closes #17, see [here](https://github.com/marcus67/little_brother_taskbar/issues/17)
 *   Closes #18, see [here](https://github.com/marcus67/little_brother_taskbar/issues/18)
 *   Add icon in window header to show whether spoken notifications are enabled
 *   Update Italian localization
-*   Upgrade to `python_base_app` 0.2.10
-*   Correct URLs for test.pypi.org and pypi.org
 
 ## Version 0.1.11 (release, August 27th, 2020)
 
