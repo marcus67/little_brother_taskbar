@@ -20,7 +20,7 @@ and then try to re-install `LittleBrotherTaskbar`.
 
 ## Trouble finding the library `libwx_baseu-3.0.so` 
 
-Unfortunately, there seems to be some incompatibilty between the latest versions of the Python `setuptools` and the
+Unfortunately, there seems to be some incompatibility between some versions of the Python `setuptools` and the
 way that `wxPython` builds its libraries. In this case the following error will occur when installing the `wxPython`
 PIP package:
 
@@ -28,8 +28,8 @@ PIP package:
     error: [Errno 2] No such file or directory: 'build/lib.linux-x86_64-3.5/wx/libwx_baseu-3.0.so'
 
 One way to tackle this is to explicitly downgrade the `setuptools` package. In the current CI setup, using version
-`40.8.0` worked successfully:
+`51.1.2` worked successfully:
 
-    pip install setuptools==40.8.0
+    pip install setuptools==51.1.2
     
 After that try to re-install the `LittleBrotherTaskbar`.
