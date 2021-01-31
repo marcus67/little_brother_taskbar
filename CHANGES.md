@@ -4,9 +4,9 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
-## Version 0.1.15 (release, January 30th, 2021)
+## Version 0.1.15 (release, January 31st, 2021)
 
-*   Upgrade to `python_base_app` 0.2.11 (fix CircleCI CPU limit issue)
+*   Upgrade to `python_base_app` 0.2.13 (fix CircleCI CPU limit issue)
 
 ## Version 0.1.14 (release, January 26th, 2021)
 
