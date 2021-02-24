@@ -145,7 +145,7 @@ msgstr "Configuration"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:51
 msgid "Exit"
-Sortirmsgstr "Sortie"
+msgstr "Sortie"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:77
 msgid "Invalid Input"

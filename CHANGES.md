@@ -4,6 +4,12 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.16 (release, February 24, 2021)
+
+*   Accepts [pull request regarding Italian localization](https://github.com/marcus67/little_brother_taskbar/pull/23)
+*   Accepts [pull request regarding French localization](https://github.com/marcus67/little_brother_taskbar/pull/24)
+*   Beautified tray logo
+
 ## Version 0.1.15 (release, January 31st, 2021)
 
 *   Upgrade to `python_base_app` 0.2.13 (fix CircleCI CPU limit issue)
