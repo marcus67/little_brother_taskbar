@@ -1,14 +1,14 @@
 # Italian translations for LittleBrotherTaskbar.
 # Copyright (C) 2019 ORGANIZATION
 # This file is distributed under the same license as the  project.
-# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2019.
+# ALBANO BATTISTELLA <albano_battistella@hotmail.com>, 2019,2020,2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version:  little-brother-taskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2020-08-27 23:00+0200\n"
-"PO-Revision-Date: 2020-08-30 15:00+0100\n"
+"PO-Revision-Date: 2021-02-21 10:00+0100\n"
 "Last-Translator: albano battistella <albano_battistella@hotmail.com>\n"
 "Language: it\n"
 "Language-Team: it <LL@li.org>\n"
