@@ -32,6 +32,7 @@ from python_base_app import base_app
 from python_base_app import configuration
 from python_base_app import audio_handler
 from python_base_app import locale_helper
+from python_base_app import tools
 
 UTF_LOUDSPEAKER = "🔊"
 UTF_MUTED_LOUDSPEAKER = "🔇"
@@ -67,6 +68,9 @@ class App(base_app.BaseApp):
         self._username = None
         self._latest_notification = None
         self._locale = None
+        self._last_status_update = tools.get_current_time()
+        self._warning_time_without_send_events = None
+        self._maximum_time_without_send_events = None
 
         self.check_user_configuration_file()
 
@@ -98,10 +102,17 @@ class App(base_app.BaseApp):
 
     def speak_status(self, p_user_status):
 
+        self.speak_notification(p_notification=p_user_status.notification, p_locale=p_user_status.locale)
+
+    def speak_notification(self, p_notification, p_locale=None):
+
+        if p_locale is None:
+            p_locale = self._locale
+
         if self._audio_handler is not None:
-            if p_user_status.notification is not None and p_user_status.notification != self._latest_notification:
-                self._audio_handler.notify(p_text=p_user_status.notification, p_locale=p_user_status.locale)
-                self._latest_notification = p_user_status.notification
+            if p_notification is not None and p_notification != self._latest_notification:
+                self._audio_handler.notify(p_text=p_notification, p_locale=p_locale)
+                self._latest_notification = p_notification
 
     def clear_notification(self):
 
@@ -113,19 +124,54 @@ class App(base_app.BaseApp):
 
         user_status = self._status_connector.request_status(p_username=self._username)
 
+        font = self._status_font
+        color = self._color_normal_mode
+        color_foreground = self._color_normal_mode_foreground
+        text = None
+
         if user_status is None:
             self.clear_notification()
 
         else:
             if isinstance(user_status, str):
-                font = self._error_message_font
-                color = self._color_error_message
-                color_foreground = self._color_error_message_foreground
-                text = user_status
-                self.clear_notification()
+                time_without_status_update = int((tools.get_current_time() - self._last_status_update).total_seconds() / 10) * 10
+
+                notification = None
+
+                if self._warning_time_without_send_events is not None and self._maximum_time_without_send_events is not None:
+                    if self._warning_time_without_send_events <= time_without_status_update < self._maximum_time_without_send_events:
+                        time_remaining = self._maximum_time_without_send_events - time_without_status_update
+                        msg = self._("Restore network or you will be logged out in {time_remaining} seconds.")
+                        text = self._(msg.format(time_without_status_update=time_without_status_update,
+                                                 time_remaining=time_remaining))
+                        notification = text
+
+                    elif time_without_status_update >= self._maximum_time_without_send_events:
+                        msg = self._("No network for at least {maximum_time_without_send_events} seconds. You will be logged out immediately.")
+                        text = self._(msg.format(maximum_time_without_send_events=self._maximum_time_without_send_events))
+                        notification = text
+
+                else:
+                    text = user_status
+
+                if text is not None:
+                    font = self._error_message_font
+                    color = self._color_error_message
+                    color_foreground = self._color_error_message_foreground
+
+                    if self._app_config.enable_spoken_notifications:
+                        self.speak_notification(p_notification=notification)
+
+                    else:
+                        self.clear_notification()
+
 
             else:
                 self.set_locale(p_locale=user_status.locale)
+                self._warning_time_without_send_events = user_status.warning_time_without_send_events
+                self._maximum_time_without_send_events = user_status.maximum_time_without_send_events
+                self._last_status_update = tools.get_current_time()
+
                 font = self._status_font
 
                 if not user_status.logged_in:
@@ -166,13 +212,14 @@ class App(base_app.BaseApp):
                     self.speak_status(p_user_status=user_status)
 
 
-            # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
-            wx.CallAfter(self._static_text.SetFont, font)
-            wx.CallAfter(self._status_frame.SetBackgroundColour, color)
-            wx.CallAfter(self._static_text.SetBackgroundColour, color)
-            wx.CallAfter(self._static_text.SetForegroundColour, color_foreground)
-            wx.CallAfter(self._static_text.SetLabel, text)
-            wx.CallAfter(self._static_text.Wrap, self._app_config.window_width)
+            if text is not None:
+                # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
+                wx.CallAfter(self._static_text.SetFont, font)
+                wx.CallAfter(self._status_frame.SetBackgroundColour, color)
+                wx.CallAfter(self._static_text.SetBackgroundColour, color)
+                wx.CallAfter(self._static_text.SetForegroundColour, color_foreground)
+                wx.CallAfter(self._static_text.SetLabel, text)
+                wx.CallAfter(self._static_text.Wrap, self._app_config.window_width)
 
     def evaluate_configuration(self):
 
