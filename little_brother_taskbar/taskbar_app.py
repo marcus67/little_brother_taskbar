@@ -15,27 +15,27 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import gettext
 import locale
 import os.path
 import threading
+from typing import Optional
 
 import wx
 import wx.adv
 
-from typing import Optional
-
+from little_brother_taskbar import configuration_model
 from little_brother_taskbar import status_connector
 from little_brother_taskbar import taskbar
-from little_brother_taskbar import configuration_model
+from little_brother_taskbar.status_frame import StatusFrame
+from python_base_app import audio_handler
 from python_base_app import base_app
 from python_base_app import configuration
-from python_base_app import audio_handler
 from python_base_app import locale_helper
 from python_base_app import tools
 
 UTF_LOUDSPEAKER = "🔊"
 UTF_MUTED_LOUDSPEAKER = "🔇"
+
 
 def get_argument_parser(p_app_name):
     parser = base_app.get_argument_parser(p_app_name=p_app_name)
@@ -61,7 +61,7 @@ class App(base_app.BaseApp):
 
         self._wx_app = wx.App(useBestVisual=True)
         self._app_config = None
-        self._status_frame : Optional[wx.Frame] = None
+        self._status_frame: Optional[StatusFrame] = None
         self._status_connector = None
         self._audio_handler = None
         self._taskbar_process = None
@@ -122,6 +122,9 @@ class App(base_app.BaseApp):
 
         self._logger.debug("update_status")
 
+        if self._status_frame is None:
+            return
+
         user_status = self._status_connector.request_status(p_username=self._username)
 
         font = self._status_font
@@ -134,7 +137,8 @@ class App(base_app.BaseApp):
 
         else:
             if isinstance(user_status, str):
-                time_without_status_update = int((tools.get_current_time() - self._last_status_update).total_seconds() / 10) * 10
+                time_without_status_update = int(
+                    (tools.get_current_time() - self._last_status_update).total_seconds() / 10) * 10
 
                 notification = None
 
@@ -147,8 +151,10 @@ class App(base_app.BaseApp):
                         notification = text
 
                     elif time_without_status_update >= self._maximum_time_without_send_events:
-                        msg = self._("No network for at least {maximum_time_without_send_events} seconds. You will be logged out immediately.")
-                        text = self._(msg.format(maximum_time_without_send_events=self._maximum_time_without_send_events))
+                        msg = self._(
+                            "No network for at least {maximum_time_without_send_events} seconds. You will be logged out immediately.")
+                        text = self._(
+                            msg.format(maximum_time_without_send_events=self._maximum_time_without_send_events))
                         notification = text
 
                 else:
@@ -192,7 +198,7 @@ class App(base_app.BaseApp):
                             color_foreground = self._color_approaching_logout_foreground
 
                             if self._app_config.show_window_when_approaching_logout:
-                                self._status_frame.Show(True)
+                                self.show_status_frame(True)
 
                         else:
                             color = self._color_normal_mode
@@ -211,15 +217,11 @@ class App(base_app.BaseApp):
                 if user_status.logged_in and self._app_config.enable_spoken_notifications:
                     self.speak_status(p_user_status=user_status)
 
-
             if text is not None:
                 # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
-                wx.CallAfter(self._static_text.SetFont, font)
-                wx.CallAfter(self._status_frame.SetBackgroundColour, color)
-                wx.CallAfter(self._static_text.SetBackgroundColour, color)
-                wx.CallAfter(self._static_text.SetForegroundColour, color_foreground)
-                wx.CallAfter(self._static_text.SetLabel, text)
-                wx.CallAfter(self._static_text.Wrap, self._app_config.window_width)
+                #self._logger.info("Before CallAfter")
+                wx.CallAfter(self._status_frame.redraw_text, text, font, color, color_foreground)
+                #self._logger.info("After CallAfter")
 
     def evaluate_configuration(self):
 
@@ -230,20 +232,13 @@ class App(base_app.BaseApp):
             window_title = configuration_model.APP_NAME + " " + UTF_MUTED_LOUDSPEAKER
 
         if self._status_frame is None:
-            self._status_frame = wx.Frame(None, id=wx.ID_ANY, title=window_title,
-                                          style=wx.CAPTION | wx.STAY_ON_TOP | wx.RESIZE_BORDER,
-                                          size=(self._app_config.window_width, self._app_config.window_height))
-            self._status_frame.Bind(wx.EVT_LEFT_UP, lambda x:self._status_frame.Show(False))
-            self._status_frame.Bind(wx.EVT_CLOSE, lambda x:self._status_frame.Show(False))
-            icon = wx.NullIcon
-            icon_path = os.path.join(os.path.dirname(__file__), "static/icons/little-brother-taskbar-logo_32x32.bmp")
-            icon.CopyFromBitmap(wx.Bitmap(icon_path, wx.BITMAP_TYPE_BMP))
-            self._status_frame.SetIcon(icon)
-
+            self._status_frame = StatusFrame(p_window_title=window_title,
+                                             p_size=(self._app_config.window_width, self._app_config.window_height),
+                                             p_app_config=self._app_config, p_base_app=self)
 
         else:
-            self._status_frame.SetSize(size=(self._app_config.window_width, self._app_config.window_height))
-            self._status_frame.SetTitle(window_title)
+            wx.CallAfter(self._status_frame.update,
+                         (self._app_config.window_width, self._app_config.window_height), window_title)
 
         # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
         self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
@@ -260,7 +255,6 @@ class App(base_app.BaseApp):
         self._color_error_message_foreground = wx.Colour(self._app_config.color_error_message_foreground)
         self._color_normal_mode_foreground = wx.Colour(self._app_config.color_normal_mode_foreground)
         self._color_approaching_logout_foreground = wx.Colour(self._app_config.color_approaching_logout_foreground)
-
 
     def prepare_services(self, p_full_startup=True):
 
@@ -288,7 +282,7 @@ class App(base_app.BaseApp):
         locale_dir = os.path.join(os.path.dirname(__file__), "translations")
 
         self._locale_helper = locale_helper.LocaleHelper(p_locale_dir=locale_dir,
-                                                         p_locale_selector=lambda : self._locale)
+                                                         p_locale_selector=lambda: self._locale)
 
         self._ = self._locale_helper.gettext
 
@@ -311,35 +305,57 @@ class App(base_app.BaseApp):
 
         self._status_connector = status_connector.StatusConnector(p_config=status_connector_config, p_lang=self._)
 
-        task = base_app.RecurringTask(p_name="app.updateStatus",
-                                      p_handler_method=lambda: self.update_status(),
-                                      p_interval=self._app_config.check_interval)
-        self.add_recurring_task(p_recurring_task=task)
-
         self.evaluate_configuration()
 
-        self._static_text = wx.StaticText(self._status_frame, id=wx.ID_ANY,
-                                          style=wx.ALIGN_CENTER | wx.ALIGN_CENTER_VERTICAL)
-
-        self.update_status()
-        self._status_frame.Show(self._app_config.show_window_upon_start)
 
         self._icon = taskbar.TaskBarIcon(p_config=self._app_config, p_status_frame=self._status_frame,
                                          p_base_app=self, p_gettext=self._locale_helper.gettext,
                                          p_configuration_model=self._app_config)
 
+
+        self.show_status_frame(self._app_config.show_window_upon_start)
+
+        self.update_status()
+
+
+        task = base_app.RecurringTask(p_name="app.updateStatus",
+                                      p_handler_method=lambda: self.update_status(),
+                                      p_interval=self._app_config.check_interval)
+        self.add_recurring_task(p_recurring_task=task)
+
         self._taskbar_process = threading.Thread(target=self._wx_app.MainLoop)
         self._taskbar_process.start()
 
+    def show_status_frame(self, p_show):
+        wx.CallAfter(self._status_frame.Show, p_show)
+
     def stop_event_queue(self):
+
+        if self._status_frame:
+            self._status_frame.start_shutdown()
+
         self._icon = None
         super().stop_event_queue()
 
+    def shutdown_gui(self):
+
+        if self._status_frame is not None:
+            self._status_frame.Destroy()
+            self._status_frame = None
+
+        if self._icon is not None:
+            self._icon.shut_down()
+            self._icon = None
+
     def stop_services(self):
 
+        if self._status_frame:
+            self._status_frame.start_shutdown()
+
         if self._taskbar_process is not None:
-            if self._taskbar_process.is_alive() and self._icon is not None:
-                wx.CallAfter(self._icon.shut_down)
+            if self._taskbar_process.is_alive():
+                wx.Yield()
+                wx.CallAfter(self.shutdown_gui)
 
             self._taskbar_process.join()
             self._taskbar_process = None

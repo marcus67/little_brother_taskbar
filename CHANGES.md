@@ -7,6 +7,9 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 ## Version 0.1.17 (release, March ??, 2021)
 
 *   Closes #25, see [here](https://github.com/marcus67/little_brother_taskbar/issues/25)
+*   Closes #26, see [here](https://github.com/marcus67/little_brother_taskbar/issues/26)
+*   Closes #27, see [here](https://github.com/marcus67/little_brother_taskbar/issues/27)
+*   Add class `StatusFrame`
 
 ## Version 0.1.16 (release, February 24, 2021)
 

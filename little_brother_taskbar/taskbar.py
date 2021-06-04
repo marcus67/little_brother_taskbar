@@ -61,6 +61,7 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
 
     def on_exit(self, _event):
         self.shut_down()
+        self._base_app.stop_event_queue()
 
     def on_configuration(self, _event):
 
@@ -79,6 +80,6 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
 
 
     def shut_down(self):
-        wx.CallAfter(self.Destroy)
-        self._status_frame.Close()
-        self._base_app.stop_event_queue()
+        #wx.CallAfter(self.Destroy)
+        self.Destroy()
+
