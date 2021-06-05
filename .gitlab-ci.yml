@@ -24,6 +24,7 @@
 stages:
   - build
   - install_and_check
+  - analyze
   
 build_pypi:
   image: accso/docker-python-app:latest
@@ -53,6 +54,17 @@ install_pypi:
       paths:
         - htmlcov
         - coverage.xml
+  variables:
+    # Suppress automatic checkout for all sub modules
+    GIT_SUBMODULE_STRATEGY: recursive
+
+analyze:
+  image: accso/docker-python-app:latest
+  stage: analyze
+  script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage ANALYZE --use-dev-dir=.
+  after_script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEARDOWN
   variables:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive

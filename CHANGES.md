@@ -10,6 +10,8 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 *   Closes #26, see [here](https://github.com/marcus67/little_brother_taskbar/issues/26)
 *   Closes #27, see [here](https://github.com/marcus67/little_brother_taskbar/issues/27)
 *   Add class `StatusFrame`
+*   Add script `run_little_brother_taskbar_test_suite_no_env.py` 
+*   Activate Sonarcube analysis
 
 ## Version 0.1.16 (release, February 24, 2021)
 
