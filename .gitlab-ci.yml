@@ -1,4 +1,4 @@
-#    Copyright (C) 2019  Marcus Rickert
+#    Copyright (C) 2019-2021  Marcus Rickert
 #
 #    See https://github.com/marcus67/python_base_app
 #
@@ -22,9 +22,10 @@
 ##################################################################################
 
 stages:
-- build
-- install_and_check
-
+  - build
+  - install_and_check
+  - analyze
+  
 build_pypi:
   image: accso/docker-python-app:latest
   stage: build
@@ -35,7 +36,7 @@ build_pypi:
   artifacts:
       when: always
       paths:
-        - dist/little-brother-taskbar-0.1.15.tar.gz
+        - dist/little-brother-taskbar-0.1.17.tar.gz
   variables:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive
@@ -52,6 +53,18 @@ install_pypi:
       when: always
       paths:
         - htmlcov
+        - coverage.xml
+  variables:
+    # Suppress automatic checkout for all sub modules
+    GIT_SUBMODULE_STRATEGY: recursive
+
+analyze:
+  image: accso/docker-python-app:latest
+  stage: analyze
+  script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage ANALYZE --use-dev-dir=.
+  after_script:
+    - PYTHONPATH=contrib/python_base_app python3 ci_toolbox.py --execute-stage TEARDOWN
   variables:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive

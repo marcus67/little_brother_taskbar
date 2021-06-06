@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
-"POT-Creation-Date: 2020-09-06 23:40+0200\n"
+"POT-Creation-Date: 2021-03-07 01:40+0100\n"
 "PO-Revision-Date: 2020-04-20 10:00+0200\n"
 "Last-Translator: ROWNAK JYOTI ZAMAN <jyotizaman@yahoo.com>\n"
 "Language: bn\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.9.0\n"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog.py:71
 msgid "Error"
@@ -149,11 +149,21 @@ msgstr ""
 msgid "Invalid Input"
 msgstr ""
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:132
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:144
+msgid "Restore network or you will be logged out in {time_remaining} seconds."
+msgstr ""
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:150
+msgid ""
+"No network for at least {maximum_time_without_send_events} seconds. You "
+"will be logged out immediately."
+msgstr ""
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:181
 msgid "User '{username}' not logged in"
 msgstr "ব্যবহারকারী '{username}' লগ ইন অবস্থায় নেই"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:138
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:187
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
@@ -161,11 +171,11 @@ msgstr ""
 "সময় বাকী:\n"
 "{minutes} মিনিট"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:153
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:202
 msgid "Unlimited Time"
 msgstr "কোন সময়সীমা নেই"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:159
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:209
 msgid "No Activity Allowed"
 msgstr "কোন কাজ করার অনুমতি নেই"
 

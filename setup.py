@@ -59,7 +59,8 @@ extended_setup_params = {
     "build_debian_package" : False,
     "build_pypi_package": True,
     "publish_pypi_package": {'release': ('https://upload.pypi.org/legacy/', 'PYPI_API_TOKEN'),
-                             'master': ('https://test.pypi.org/legacy/', 'TEST_PYPI_API_TOKEN')}
+                             'master': ('https://test.pypi.org/legacy/', 'TEST_PYPI_API_TOKEN')},
+    "analyze": True,
 }
 
 setup_params.update(little_brother_taskbar.settings.settings)

@@ -1,9 +1,9 @@
-#! /var/lib/little-brother-taskbar/virtualenv/bin/python3
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 #    Copyright (C) 2019-2021  Marcus Rickert
 #
-#    See https://github.com/marcus67/little_brother_taskbar
+#    See https://github.com/marcus67/little_brother
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by

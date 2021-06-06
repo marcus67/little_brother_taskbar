@@ -4,9 +4,24 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
-## Version 0.1.15 (release, January 30th, 2021)
+## Version 0.1.17 (release, March ??, 2021)
 
-*   Upgrade to `python_base_app` 0.2.11 (fix CircleCI CPU limit issue)
+*   Closes #25, see [here](https://github.com/marcus67/little_brother_taskbar/issues/25)
+*   Closes #26, see [here](https://github.com/marcus67/little_brother_taskbar/issues/26)
+*   Closes #27, see [here](https://github.com/marcus67/little_brother_taskbar/issues/27)
+*   Add class `StatusFrame`
+*   Add script `run_little_brother_taskbar_test_suite_no_env.py` 
+*   Activate Sonarcube analysis
+
+## Version 0.1.16 (release, February 24, 2021)
+
+*   Accepts [pull request regarding Italian localization](https://github.com/marcus67/little_brother_taskbar/pull/23)
+*   Accepts [pull request regarding French localization](https://github.com/marcus67/little_brother_taskbar/pull/24)
+*   Beautified tray logo
+
+## Version 0.1.15 (release, January 31st, 2021)
+
+*   Upgrade to `python_base_app` 0.2.13 (fix CircleCI CPU limit issue)
 
 ## Version 0.1.14 (release, January 26th, 2021)
 
