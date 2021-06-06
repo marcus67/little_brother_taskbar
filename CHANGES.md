@@ -4,7 +4,11 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
-## Version 0.1.17 (release, March ??, 2021)
+## Version 0.1.18 (release, June ??, 2021)
+
+*   Add [CodeClimate](https://codeclimate.com/github/marcus67/little_brother_taskbar) rating to README.md
+
+## Version 0.1.17 (release, June 6th, 2021)
 
 *   Closes #25, see [here](https://github.com/marcus67/little_brother_taskbar/issues/25)
 *   Closes #26, see [here](https://github.com/marcus67/little_brother_taskbar/issues/26)
