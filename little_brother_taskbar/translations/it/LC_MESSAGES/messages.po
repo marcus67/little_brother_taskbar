@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version:  little-brother-taskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
 "POT-Creation-Date: 2021-03-07 01:40+0100\n"
-"PO-Revision-Date: 2021-02-21 10:00+0100\n"
+"PO-Revision-Date: 2021-06-19 20:00+0200\n"
 "Last-Translator: albano battistella <albano_battistella@hotmail.com>\n"
 "Language: it\n"
 "Language-Team: it <LL@li.org>\n"
@@ -153,13 +153,15 @@ msgstr "inserimento non valido"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:144
 msgid "Restore network or you will be logged out in {time_remaining} seconds."
-msgstr ""
+msgstr "Ripristina la rete o verrai disconnesso tra {time_remaining} secondi."
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:150
 msgid ""
 "No network for at least {maximum_time_without_send_events} seconds. You "
 "will be logged out immediately."
-msgstr ""
+msgstr """Nessuna rete per almeno {maximum_time_senza_send_events} secondi.Verrai  "
+"disconnesso immediatamente."
+
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:181
 msgid "User '{username}' not logged in"
