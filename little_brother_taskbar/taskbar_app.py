@@ -127,7 +127,7 @@ class App(base_app.BaseApp):
 
         user_status = self._status_connector.request_status(p_username=self._username)
 
-        font = self._status_font
+        font_size = self._app_config.status_message_font_size
         color = self._color_normal_mode
         color_foreground = self._color_normal_mode_foreground
         text = None
@@ -161,7 +161,7 @@ class App(base_app.BaseApp):
                     text = user_status
 
                 if text is not None:
-                    font = self._error_message_font
+                    font_size = self._app_config.error_message_font_size
                     color = self._color_error_message
                     color_foreground = self._color_error_message_foreground
 
@@ -178,12 +178,12 @@ class App(base_app.BaseApp):
                 self._maximum_time_without_send_events = user_status.maximum_time_without_send_events
                 self._last_status_update = tools.get_current_time()
 
-                font = self._status_font
+                font_size = self._app_config.status_message_font_size
 
                 if not user_status.logged_in:
                     color = self._color_warning_message
                     color_foreground = self._color_warning_message_foreground
-                    font = self._error_message_font
+                    font_size = self._app_config.error_message_font_size
                     fmt = self._("User '{username}' not logged in")
                     text = fmt.format(username=self._username)
                     self.clear_notification()
@@ -220,7 +220,7 @@ class App(base_app.BaseApp):
             if text is not None:
                 # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
                 #self._logger.info("Before CallAfter")
-                wx.CallAfter(self._status_frame.redraw_text, text, font, color, color_foreground)
+                wx.CallAfter(self._status_frame.redraw_text, text, font_size, color, color_foreground)
                 #self._logger.info("After CallAfter")
 
     def evaluate_configuration(self):
@@ -241,10 +241,10 @@ class App(base_app.BaseApp):
                          (self._app_config.window_width, self._app_config.window_height), window_title)
 
         # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
-        self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
-                                    False, u'Consolas')
-        self._error_message_font = wx.Font(self._app_config.error_message_font_size,
-                                           wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Consolas')
+        #self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
+        #                            False, u'Consolas')
+        #self._error_message_font = wx.Font(self._app_config.error_message_font_size,
+        #                                   wx.MODERN, wx.NORMAL, wx.NORMAL, False, u'Consolas')
 
         self._color_warning_message = wx.Colour(self._app_config.color_warning_message)
         self._color_error_message = wx.Colour(self._app_config.color_error_message)
