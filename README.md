@@ -14,10 +14,16 @@ at [Facebook](https://www.facebook.com/littlebrotherdebian) or write comments to
 
 ## Screenshots
 
-The following screenshots show the display of `LittleBrotherTaskbar`.  
+The following screenshots show the display of `LittleBrotherTaskbar` when optional play time is not active.  
 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_free_play.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
+
+These are the corresponding screenhots when optional play is active.
+
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_ok.png) 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_warning.png) 
 
 ## Change History 
 
