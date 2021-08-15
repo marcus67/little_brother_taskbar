@@ -60,6 +60,10 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
     *   Reason why login is denied
     *   Warnings about impending logout
     *   Reason why user will be logged out
+    
+*   As of version 0.1.18 (see [feature issue](https://github.com/marcus67/little_brother_taskbar/issues/30)):
+    *   Shows the remaining "optional time" that a user can use to extend her time
+    *   Provides buttons to extend the session time (that is to request a time extension)
 
 ## Prerequisites
 
@@ -74,7 +78,7 @@ In case you want to use the MP3 speech generation for notification messages you 
 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
 | ------------ | ------------- | ---------------------------------------------------------------------- | ---------------- |
-| Debian       | testing       |                                                                        | 02.APR.2020      |
+| Debian       | testing       |                                                                        | 15.AUG.2021      |
 | Ubuntu       | 19.3          |                                                                        | 08.AUG.2020      |
 
 ## Quick Install
@@ -216,7 +220,7 @@ the following languages are supported/prepared (in the order they were made avai
 | ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | 0.1.10         |  J. Moldawski              |
 | ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | 0.1.10         |  Arik M.                   |
 | ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | 0.1.10         |  Rownak Jyoti Zaman        |
-| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Up-to-date     |  Albano Battistella        |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | 0.1.11         |  Albano Battistella        |
 | ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | 0.1.10         |  Busaba Kramer             |
 | ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | 0.1.10         |  Ruth Wucherpfennig-Krömer |
 | ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                      |

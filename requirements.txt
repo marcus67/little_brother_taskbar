@@ -1,3 +1,3 @@
 Jinja2>=2.10.3
-python-base-app>=0.2.22
+python-base-app>=0.2.23
 wxPython>=4.1.1

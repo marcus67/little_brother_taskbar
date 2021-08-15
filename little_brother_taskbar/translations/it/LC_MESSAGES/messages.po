@@ -60,7 +60,7 @@ msgstr ""
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:50
 msgid "Time Extension Intervals"
-msgstr ""
+msgstr "Intervalli di estensione temporale"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:56
 msgid "Colors"
@@ -140,7 +140,7 @@ msgstr "Ok"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_model.py:79
 msgid "time intervals must be positive integers separated by '{separator}'"
-msgstr ""
+msgstr "gli intervalli di tempo devono essere numeri interi positivi separati da '{separator}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:66
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:73
@@ -154,7 +154,7 @@ msgstr "Impossibile richiedere lo stato utente tramite url '{url}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/status_connector.py:108
 msgid "Error while requesting time extension: '{msg}'"
-msgstr ""
+msgstr "Errore durante la richiesta di estensione del tempo: '{msg}'"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar.py:50
 msgid "Configuration"
@@ -170,13 +170,15 @@ msgstr "inserimento non valido"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:152
 msgid "Restore network or you will be logged out in {time_remaining} seconds."
-msgstr ""
+msgstr "Ripristina la rete o verrai disconnesso tra {time_remaining} secondi."
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:158
 msgid ""
 "No network for at least {maximum_time_without_send_events} seconds. You "
 "will be logged out immediately."
-msgstr ""
+msgstr """Nessuna rete per almeno {maximum_time_senza_send_events} secondi.Verrai  "
+"disconnesso immediatamente."
+
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:191
 msgid "User '{username}' not logged in"
@@ -200,5 +202,5 @@ msgstr "Nessuna Attività Consentita"
 
 #: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:231
 msgid "(Optional time available: {minutes})"
-msgstr ""
+msgstr "(Tempo opzionale disponibile: {minuti})"
 

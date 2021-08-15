@@ -10,7 +10,7 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 *   Handle status window using `wxglade`
 *   Use `HtmlWindow` for displaying message    
 *   Remove resize hack
-*   Upgrade `python_base_app` to 0.2.22
+*   Upgrade `python_base_app` to 0.2.23
 *   Closes #30, see [here](https://github.com/marcus67/little_brother_taskbar/issues/30)
 *   Update Italian localization
 
