@@ -143,6 +143,8 @@ class ConfigurationDialog(configuration_dialog_wxglade.ConfigurationDialog):
             p_configuration_model.show_window_when_approaching_logout = \
                 self._checkbox_show_window_when_approaching_logout.GetValue()
             p_configuration_model.enable_spoken_notifications = self._checkbox_enable_spoken_notifications.GetValue()
+            p_configuration_model.add_time_intervals_string = self._text_ctrl_add_time_intervals.GetValue()
+            _ignore_me = p_configuration_model.add_time_intervals
 
 
         except Exception as e:
@@ -156,6 +158,7 @@ class ConfigurationDialog(configuration_dialog_wxglade.ConfigurationDialog):
         self._text_ctrl_check_interval.SetValue(str(p_configuration_model.check_interval))
         self._text_ctrl_warning_time_approaching_logout.SetValue(
             str(p_configuration_model.warning_minutes_approaching_logout))
+        self._text_ctrl_add_time_intervals.SetValue(p_configuration_model.add_time_intervals_string)
 
         self._text_ctrl_status_message_font_size.SetValue(str(p_configuration_model.status_message_font_size))
         self._text_ctrl_error_message_font_size.SetValue(str(p_configuration_model.error_message_font_size))

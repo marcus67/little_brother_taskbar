@@ -75,3 +75,39 @@ class StatusConnector(base_rest_api_access.BaseRestAPIAccess):
             self._logger.error(result)
 
         return result
+
+    def request_time_extension(self, p_username:str, p_extension_length:int, p_secret:str):
+
+        url = self._get_api_url(constants.API_REL_URL_REQUEST_TIME_EXTENSION)
+
+        api_result = None
+
+        try:
+            api_result = self.execute_api_call(
+                p_url=url,
+                p_method="POST",
+                # p_mime_type="application/json",
+                p_parameters={
+                    constants.API_URL_PARAM_USERNAME: p_username,
+                    constants.API_URL_PARAM_EXTENSION_LENGTH: str(p_extension_length),
+                    constants.API_URL_PARAM_SECRET: p_secret
+                })
+
+        except exceptions.ArtifactNotFoundException as e:
+            if e.result_document is not None:
+                fmt = self._(e.result_document[constants.JSON_ERROR])
+
+            else:
+                fmt = self._("Cannot request time extension using url '{url}'")
+
+            result = fmt.format(username=p_username, url=self._get_api_url())
+            self._logger.warning(result)
+
+        except Exception as e:
+
+            fmt = self._("Error while requesting time extension: '{msg}'")
+            result = fmt.format(msg=str(e))
+            self._logger.error(result)
+
+        return api_result
+

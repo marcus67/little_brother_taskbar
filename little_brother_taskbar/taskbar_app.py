@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
+import datetime
 import locale
 import os.path
 import threading
@@ -23,10 +23,11 @@ from typing import Optional
 import wx
 import wx.adv
 
-from little_brother_taskbar import configuration_model
+from little_brother_taskbar import configuration_model, button_info, constants
 from little_brother_taskbar import status_connector
 from little_brother_taskbar import taskbar
 from little_brother_taskbar.status_frame import StatusFrame
+from little_brother_taskbar.user_status import UserStatus
 from python_base_app import audio_handler
 from python_base_app import base_app
 from python_base_app import configuration
@@ -35,6 +36,7 @@ from python_base_app import tools
 
 UTF_LOUDSPEAKER = "🔊"
 UTF_MUTED_LOUDSPEAKER = "🔇"
+ADD_MINUTE_LABEL_FORMAT_STRING = "+{minutes} min."
 
 
 def get_argument_parser(p_app_name):
@@ -60,7 +62,7 @@ class App(base_app.BaseApp):
                                   p_dir_name='.')
 
         self._wx_app = wx.App(useBestVisual=True)
-        self._app_config = None
+        self._app_config : Optional[configuration_model.TaskBarAppConfigModel] = None
         self._status_frame: Optional[StatusFrame] = None
         self._status_connector = None
         self._audio_handler = None
@@ -71,6 +73,9 @@ class App(base_app.BaseApp):
         self._last_status_update = tools.get_current_time()
         self._warning_time_without_send_events = None
         self._maximum_time_without_send_events = None
+        self._user_status: UserStatus = UserStatus()
+        self._window_title = configuration_model.APP_NAME
+        self._earliest_button_activation : datetime.datetime = tools.get_current_time()
 
         self.check_user_configuration_file()
 
@@ -171,8 +176,8 @@ class App(base_app.BaseApp):
                     else:
                         self.clear_notification()
 
-
             else:
+                self._user_status = user_status
                 self.set_locale(p_locale=user_status.locale)
                 self._warning_time_without_send_events = user_status.warning_time_without_send_events
                 self._maximum_time_without_send_events = user_status.maximum_time_without_send_events
@@ -217,28 +222,70 @@ class App(base_app.BaseApp):
                 if user_status.logged_in and self._app_config.enable_spoken_notifications:
                     self.speak_status(p_user_status=user_status)
 
+                self.set_time_extension_buttons()
+                self.set_frame_size_and_title()
+
+
             if text is not None:
                 # https://stackoverflow.com/questions/14320836/wxpython-pango-error-when-using-a-while-true-loop-in-a-thread
                 #self._logger.info("Before CallAfter")
-                wx.CallAfter(self._status_frame.redraw_text, text, font_size, color, color_foreground)
+                if self._user_status.optional_time_available is not None:
+                    small_text_format = self._("(Optional time available: {minutes})")
+                    small_text = small_text_format.format(minutes=self._user_status.optional_time_available)
+
+                else:
+                    small_text = None
+                wx.CallAfter(self._status_frame.redraw_text, text, small_text, font_size, color, color_foreground)
                 #self._logger.info("After CallAfter")
+
+    def set_time_extension_buttons(self):
+
+        time_extension_buttons_active = self._user_status.optional_time_available is not None \
+                                and tools.get_current_time() > self._earliest_button_activation \
+                                and self._user_status.minutes_left_in_session is not None
+
+        button_infos = [ button_info.ButtonInfo(p_active=time_extension_buttons_active and
+                                                interval <= self._user_status.optional_time_available,
+                                                p_minutes=interval)
+                         for interval in self._app_config.add_time_intervals ]
+
+        wx.CallAfter(self._status_frame.set_buttons,
+                     p_time_extension_active=self._user_status.optional_time_available is not None,
+                     p_button_infos=button_infos)
+
+    def get_window_size(self):
+
+        if self._user_status.optional_time_available is not None:
+            window_height = (self._app_config.window_height - constants.DEFAULT_WINDOW_HEIGHT_INCREASE_FOR_TIME_EXTENSION) * constants.DEFAULT_WINDOW_HEIGHT_FACTOR_FOR_TIME_EXTENSION + constants.DEFAULT_WINDOW_HEIGHT_INCREASE_FOR_TIME_EXTENSION
+
+        else:
+            window_height = self._app_config.window_height - constants.DEFAULT_WINDOW_HEIGHT_INCREASE_FOR_TIME_EXTENSION
+
+        return (self._app_config.window_width, window_height)
+
+    def set_frame_size_and_title(self):
+
+        wx.CallAfter(self._status_frame.update, self.get_window_size(), self._window_title)
 
     def evaluate_configuration(self):
 
         if self._app_config.enable_spoken_notifications:
-            window_title = configuration_model.APP_NAME + " " + UTF_LOUDSPEAKER
+            self._window_title = configuration_model.APP_NAME + " " + UTF_LOUDSPEAKER
 
         else:
-            window_title = configuration_model.APP_NAME + " " + UTF_MUTED_LOUDSPEAKER
+            self._window_title = configuration_model.APP_NAME + " " + UTF_MUTED_LOUDSPEAKER
 
         if self._status_frame is None:
-            self._status_frame = StatusFrame(p_window_title=window_title,
-                                             p_size=(self._app_config.window_width, self._app_config.window_height),
+            self._status_frame = StatusFrame(p_window_title=self._window_title,
+                                             p_size=self.get_window_size(),
                                              p_app_config=self._app_config, p_base_app=self)
+            self._status_frame.init_buttons(p_time_extension_active=True, # todo
+                                            p_label_format_string=ADD_MINUTE_LABEL_FORMAT_STRING)
 
         else:
-            wx.CallAfter(self._status_frame.update,
-                         (self._app_config.window_width, self._app_config.window_height), window_title)
+            self.set_frame_size_and_title()
+
+        self.set_time_extension_buttons()
 
         # See  https://stackoverflow.com/questions/5851932/changing-the-font-on-a-wxpython-textctrl-widget
         #self._status_font = wx.Font(self._app_config.status_message_font_size, wx.MODERN, wx.NORMAL, wx.NORMAL,
@@ -307,7 +354,6 @@ class App(base_app.BaseApp):
 
         self.evaluate_configuration()
 
-
         self._icon = taskbar.TaskBarIcon(p_config=self._app_config, p_status_frame=self._status_frame,
                                          p_base_app=self, p_gettext=self._locale_helper.gettext,
                                          p_configuration_model=self._app_config)
@@ -365,6 +411,18 @@ class App(base_app.BaseApp):
         super().reevaluate_configuration()
         self.evaluate_configuration()
         self.update_status()
+
+    def request_time_extension(self, p_button_index:int):
+        self._status_connector.request_time_extension(
+            p_username=self._username,
+            p_secret=constants.DEFAULT_ACCESS_CODE,
+            p_extension_length = self._app_config.add_time_intervals[p_button_index],
+            )
+        if self._user_status.ruleset_check_interval is not None:
+            self._earliest_button_activation: datetime.datetime = \
+                tools.get_current_time() + datetime.timedelta(seconds=self._user_status.ruleset_check_interval)
+
+        self.set_time_extension_buttons()
 
 
 def main():

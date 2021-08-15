@@ -4,12 +4,15 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
-## Version 0.1.18 (release, June ??, 2021)
+## Version 0.1.18 (release, August 15th, 2021)
 
 *   Add [CodeClimate](https://codeclimate.com/github/marcus67/little_brother_taskbar) rating to README.md
 *   Handle status window using `wxglade`
 *   Use `HtmlWindow` for displaying message    
 *   Remove resize hack
+*   Upgrade `python_base_app` to 0.2.22
+*   Closes #30, see [here](https://github.com/marcus67/little_brother_taskbar/issues/30)
+*   Update Italian localization
 
 ## Version 0.1.17 (release, June 6th, 2021)
 
