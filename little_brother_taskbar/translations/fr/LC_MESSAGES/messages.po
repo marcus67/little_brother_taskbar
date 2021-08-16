@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  LittleBrotherTaskbar\n"
 "Report-Msgid-Bugs-To: little-brother@web.de\n"
-"POT-Creation-Date: 2021-08-15 15:50+0200\n"
+"POT-Creation-Date: 2021-08-16 23:29+0200\n"
 "PO-Revision-Date: 2021-02-21 10:35+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language: fr\n"
@@ -34,25 +34,25 @@ msgstr "Exception {exception} 'alors que les options d'analyse syntaxique"
 msgid "LittleBrotherTaskbar Configuration"
 msgstr "Configuration de LittleBrotherTaskbar"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:30
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:34
 msgid "Timings"
 msgstr "Timings"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:36
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:41
 msgid "Check Interval [seconds]"
 msgstr "Vérifier l'intervalle [secondes]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:40
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:45
 msgid "Set the time in seconds between two status checks of LittleBrother."
 msgstr ""
 "Réglez le temps en secondes entre deux vérifications d'état de "
 "LittleBrother."
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:43
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:48
 msgid "Warning Time Before Logout [minutes]"
 msgstr "Temps d'avertissement avant Déconnexion [minutes]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:47
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:52
 msgid ""
 "Set the time in minutes before logout when notifications will start "
 "appearing."
@@ -60,83 +60,87 @@ msgstr ""
 "Réglez l'heure en minutes avant la déconnexion lorsque les notifications "
 "commencerontapparaissant."
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:50
-msgid "Time Extension Intervals"
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:55
+msgid "Time Extension Intervals [minutes]"
 msgstr ""
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:56
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:62
 msgid "Colors"
 msgstr "Couleurs"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:65
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:72
 msgid "Foreground"
 msgstr "Premier plan"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:68
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:75
 msgid "Background"
 msgstr "Fond"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:71
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:78
 msgid "Error Message"
 msgstr "Message d'erreur"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:80
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:87
 msgid "Warning Message"
 msgstr "Message d'avertissement"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:89
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:96
 msgid "Normal Mode"
 msgstr "Mode Normal"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:98
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:105
 msgid "Approaching Logout"
 msgstr "Approche déconnexion"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:107
-msgid "Font Sizes"
-msgstr "Tailles de police"
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:115
+msgid "Sizes"
+msgstr "Tailles"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:113
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:119
+msgid "Font"
+msgstr "Police"
+
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:125
 msgid "Status Messages [pixel]"
 msgstr "Messages d'état [pixel]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:119
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:131
 msgid "Error Messages [pixel]"
 msgstr "Messages d'erreur [pixel]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:125
-msgid "Window Size"
-msgstr "Taille de la fenêtre"
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:137
+msgid "Window"
+msgstr "Fenêtre"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:131
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:143
 msgid "Width [pixel]"
 msgstr "Largeur [pixel]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:137
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:149
 msgid "Height [pixel]"
 msgstr "Hauteur [pixel]"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:143
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:156
 msgid "Behavior"
 msgstr "Comportement"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:149
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:163
 msgid "Enable Spoken Notifications"
 msgstr "Activer les notifications vocales"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:155
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:169
 msgid "Show Window Upon Start"
 msgstr "Afficher la fenêtre au démarrage"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:161
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:175
 msgid "Show Window When Approaching Logout"
 msgstr "Afficher la fenêtre à l'approche de la déconnexion"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:170
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:184
 msgid "Cancel"
 msgstr "Annuler"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:173
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/configuration_dialog_wxglade.py:187
 msgid "OK"
 msgstr "OK"
 
@@ -170,21 +174,21 @@ msgstr "Sortie"
 msgid "Invalid Input"
 msgstr "entrée invalide"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:152
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:153
 msgid "Restore network or you will be logged out in {time_remaining} seconds."
 msgstr ""
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:158
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:159
 msgid ""
 "No network for at least {maximum_time_without_send_events} seconds. You "
 "will be logged out immediately."
 msgstr ""
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:191
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:192
 msgid "User '{username}' not logged in"
 msgstr "L'utilisateur '{username}' n'est pas connecté"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:197
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:198
 msgid ""
 "Time left:\n"
 "{minutes} minutes"
@@ -192,24 +196,14 @@ msgstr ""
 "Temps restant:\n"
 "{minutes} minutes"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:212
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:213
 msgid "Unlimited Time"
 msgstr "Temps illimité"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:219
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:220
 msgid "No Activity Allowed"
 msgstr "Aucune activité autorisée"
 
-#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:231
+#: /home/mr/projects/little_brother_taskbar/little_brother_taskbar/taskbar_app.py:233
 msgid "(Optional time available: {minutes})"
-msgstr ""
-
-#~ msgid "Colors"
-#~ msgstr "Couleurs"
-
-#~ msgid "Background Colors"
-#~ msgstr "Couleurs d'arrière-plan"
-
-#~ msgid "LittleBrotherConfiguration Configuration"
-#~ msgstr "Configuration de LittleBrotherConfiguration"
-
+msgstr "(Temps optionnel disponible: {minutes})"

@@ -13,6 +13,7 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 *   Upgrade `python_base_app` to 0.2.23
 *   Closes #30, see [here](https://github.com/marcus67/little_brother_taskbar/issues/30)
 *   Update Italian localization
+*   Add tabs to configuration dialog
 
 ## Version 0.1.17 (release, June 6th, 2021)
 

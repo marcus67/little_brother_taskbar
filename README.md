@@ -200,7 +200,10 @@ So, you went through all of the above but `LittleBrotherTaskbar` does not seem t
 Most settings of the application can be configured using the configuration dialog which reached using the right
 mouse click on the tray icon:
 
-![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-1.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-2.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-3.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-4.png)
 
 The configuration will be saved to (and subsequently loaded from) the file `~/.config/LittleBrotherTaskbar.conf`. 
 
