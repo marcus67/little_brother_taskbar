@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  Marcus Rickert
+# Copyright (C) 2019-2021  Marcus Rickert
 #
 # See https://github.com/marcus67/little_brother_taskbar
 # This program is free software; you can redistribute it and/or modify
@@ -16,6 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from python_base_app import base_app
+from python_base_app import configuration
 
 APP_NAME = 'LittleBrotherTaskbar'
 DEFAULT_UPDATE_INTERVAL = 5
@@ -29,11 +30,16 @@ DEFAULT_COLOR_APPROACHING_LOGOUT = "rgb(114, 159, 207)"
 DEFAULT_COLOR_WARNING_MESSAGE = "rgb(252, 175, 62)"
 DEFAULT_COLOR_ERROR_MESSAGE = "rgb(204, 0, 0)"
 DEFAULT_COLOR_FOREGROUND = "rgb(0, 0, 0)"
-
 DEFAULT_WARNING_MINUTES_APPROACHING_LOGOUT = 5
 DEFAULT_WINDOW_WIDTH = 320
-DEFAULT_WINDOW_HEIGHT = 110
+DEFAULT_WINDOW_HEIGHT = 160
 DEFAULT_LOCALE = "en"
+DEFAULT_ADD_TIME_INTERVALS = "1,5,15"
+
+INTERVAL_SEPERATOR = ","
+
+def _(s):
+    return s
 
 class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
 
@@ -59,3 +65,17 @@ class TaskBarAppConfigModel(base_app.BaseAppConfigModel):
         self.color_approaching_logout_foreground = DEFAULT_COLOR_FOREGROUND
         self.warning_minutes_approaching_logout = DEFAULT_WARNING_MINUTES_APPROACHING_LOGOUT
         self.locale = DEFAULT_LOCALE
+        self.add_time_intervals_string = DEFAULT_ADD_TIME_INTERVALS
+
+    @property
+    def add_time_intervals(self, p_intervals_string = None):
+
+        try:
+            intervals_string = self.add_time_intervals_string if p_intervals_string is None else p_intervals_string
+
+            return [ int(value) for value in intervals_string.split(INTERVAL_SEPERATOR) ]
+
+        except ValueError:
+            fmt = _("time intervals must be positive integers separated by '{separator}'")
+            msg = fmt.format(separator=INTERVAL_SEPERATOR)
+            raise configuration.ConfigurationException(msg)

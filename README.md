@@ -14,10 +14,16 @@ at [Facebook](https://www.facebook.com/littlebrotherdebian) or write comments to
 
 ## Screenshots
 
-The following screenshots show the display of `LittleBrotherTaskbar`.  
+The following screenshots show the display of `LittleBrotherTaskbar` when optional play time is not active.  
 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_free_play.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
+
+These are the corresponding screenhots when optional play is active.
+
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_ok.png) 
+![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_warning.png) 
 
 ## Change History 
 
@@ -44,6 +50,7 @@ See [here](https://github.com/marcus67/little_brother_taskbar/blob/master/CHANGE
 | Test Coverage       | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/master"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar.svg?label=master"></A>                                                                                                                                                                                               | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/release"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar/release.svg?label=release"></A>        |
 | Snyk Vulnerability  | <a href="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt"><img src="https://snyk.io/test/github/marcus67/little_brother_taskbar/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt" style="max-width:100%;"></a> | not available                                                                                                                                                                                           |
 | Codacy Code Quality | <a href="https://www.codacy.com/app/marcus67/little_brother_taskbar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcus67/little_brother_taskbar&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f1fc3b113b95438189da9032ecf03b34"/></a>                                                                                         | not available                                                                                                                                                                                           |
+| Code Climate        | <a href="https://codeclimate.com/github/marcus67/little_brother_taskbar/maintainability"><img src="https://api.codeclimate.com/v1/badges/2e41f6ccb536eb5073d4/maintainability" /></a>                                                                                                                                                                                                | not available                                                                                                                                                                                           |
 
 Note: The vulnerability status is derived from the Python PIP packages found in `requirements.txt`.
 
@@ -59,6 +66,10 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
     *   Reason why login is denied
     *   Warnings about impending logout
     *   Reason why user will be logged out
+    
+*   As of version 0.1.18 (see [feature issue](https://github.com/marcus67/little_brother_taskbar/issues/30)):
+    *   Shows the remaining "optional time" that a user can use to extend her time
+    *   Provides buttons to extend the session time (that is to request a time extension)
 
 ## Prerequisites
 
@@ -73,7 +84,7 @@ In case you want to use the MP3 speech generation for notification messages you 
 
 | Distribution | Version       | Comments                                                               | Most Recent Test |
 | ------------ | ------------- | ---------------------------------------------------------------------- | ---------------- |
-| Debian       | testing       |                                                                        | 02.APR.2020      |
+| Debian       | testing       |                                                                        | 15.AUG.2021      |
 | Ubuntu       | 19.3          |                                                                        | 08.AUG.2020      |
 
 ## Quick Install
@@ -189,7 +200,10 @@ So, you went through all of the above but `LittleBrotherTaskbar` does not seem t
 Most settings of the application can be configured using the configuration dialog which reached using the right
 mouse click on the tray icon:
 
-![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-1.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-2.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-3.png)
+![Configuration Dialog](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/configuration-dialog-4.png)
 
 The configuration will be saved to (and subsequently loaded from) the file `~/.config/LittleBrotherTaskbar.conf`. 
 
@@ -215,7 +229,7 @@ the following languages are supported/prepared (in the order they were made avai
 | ![Flag Russia](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/russia-flag-icon-32.png)                    | Russian       | ru     | 0.1.10         |  J. Moldawski              |
 | ![Flag Japan](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/japan-flag-icon-32.png)                      | Japanese      | ja     | 0.1.10         |  Arik M.                   |
 | ![Flag Bangladesh](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/bangladesh-flag-icon-32.png)            | Bangla        | bn     | 0.1.10         |  Rownak Jyoti Zaman        |
-| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | Up-to-date     |  Albano Battistella        |
+| ![Flag France](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/france-flag-icon-32.png)                    | French        | fr     | 0.1.11         |  Albano Battistella        |
 | ![Flag Thailand](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/thailand-flag-icon-32.png)                | Thai          | th     | 0.1.10         |  Busaba Kramer             |
 | ![Flag Spain](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/spain-flag-icon-32.png)                      | Spanish       | es     | 0.1.10         |  Ruth Wucherpfennig-Krömer |
 | ![Flag Lithuania](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/lithuania-flag-icon-32.png)              | Lithuanian    | lt     | In preparation |  N.N.                      |

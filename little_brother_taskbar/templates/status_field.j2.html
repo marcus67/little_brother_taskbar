@@ -1,0 +1,11 @@
+<HTML>
+    <BODY STYLE="background-color: {{ background_color }}; ">
+        <CENTER>
+            <SPAN STYLE="color: {{ foreground_color }}; font-size: {{ font_size }}pt;">{{ message }}</SPAN>
+            {% if message2 %}
+            <BR>
+            <SPAN STYLE="color: {{ foreground_color }}; font-size: {{ small_font_size }}pt;">{{ message2 }}</SPAN>
+            {% endif %}
+        </CENTER>
+    </BODY>
+</HTML>

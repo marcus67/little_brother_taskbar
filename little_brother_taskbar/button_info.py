@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  Marcus Rickert
+# Copyright (C) 2019-2021  Marcus Rickert
 #
 # See https://github.com/marcus67/little_brother_taskbar
 # This program is free software; you can redistribute it and/or modify
@@ -15,16 +15,10 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-settings = {
-    "name": "little-brother-taskbar",
-    "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1.18",
-    "description": "Taskbar app displaying the remaining play time of users monitored by LittleBrother",
-    "author": "Marcus Rickert",
-    "author_email": "little-brother@web.de",
-}
+class ButtonInfo:
 
-extended_settings = {
-    "display_url": "github.com/marcus67/little_brother_taskbar",
-    "babel_rel_directory": "translations"
-}
+    def __init__(self, p_active=False, p_minutes=0):
+
+        self.active = p_active
+        self.minutes = p_minutes
+
