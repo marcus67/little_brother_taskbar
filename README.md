@@ -20,7 +20,7 @@ The following screenshots show the display of `LittleBrotherTaskbar` when option
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
 
-These are the corresponding screenhots when optional play is active.
+These are the corresponding screenhots when optional play time is active.
 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_warning.png) 
@@ -209,9 +209,33 @@ The configuration will be saved to (and subsequently loaded from) the file `~/.c
 
 ## Caveats
 
+### Issue Lists
 The application `LittleBrotherTaskbar` is far from perfect. Issues are listed on GitHub 
 (see [here](https://github.com/marcus67/little_brother_taskbar/issues)). Feel free to open new issues if you have 
 any trouble with installing and/or running the application.
+
+### Missing Tray Icon on Modern Desktops (e.g. Gnome) 
+
+The application  `little_brother_taskbar` uses the [wxPython](https://www.wxpython.org/) package to interact with the 
+XWindows system including 
+the system tray functionality. Unfortunately, the specification for the latter varies across the windows managers and 
+their versions. In modern versions of Gnome, for example, the tray icons provided by wxPython are no longer supported. 
+However, there is a Gnome extension called [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) 
+which can be installed using a Debian package which shows all "old-fashioned" 
+tray icons in the modern Gnome toolbar at the top of the screen.
+
+Follow these steps:
+
+   * As `root` open a shell and install the extension:
+        
+         apt-get install gnome-shell-extension-top-icons-plus
+
+   * Log out of the X session.
+   * Log into a new X session as the monitored user using the Gnome Desktop.
+   * Verify that there is at least the Little-Brother icon visible in the top center toolbar. 
+
+This extension may actually make other icons of installed applications visible which are using the old tray API. 
+Be prepared for a surprise.
 
 ## Internationalization
 

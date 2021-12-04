@@ -36,7 +36,7 @@ build_pypi:
   artifacts:
       when: always
       paths:
-        - dist/little-brother-taskbar-0.1.18.tar.gz
+        - dist/little-brother-taskbar-0.1.19.tar.gz
   variables:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive
