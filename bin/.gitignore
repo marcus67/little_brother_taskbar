@@ -1,3 +1,4 @@
+analyze-app.sh
 make-debian-package.sh
 publish-debian-package.sh
 publish-pypi-package.sh

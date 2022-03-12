@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  Marcus Rickert
+# Copyright (C) 2019-2022  Marcus Rickert
 #
 # See https://github.com/marcus67/little_brother_taskbar
 # This program is free software; you can redistribute it and/or modify
@@ -15,10 +15,13 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+RELEASE_BRANCH_NAME = "release"
+MASTER_BRANCH_NAME = "master"
+
 settings = {
     "name": "little-brother-taskbar",
     "url": "https://github.com/marcus67/little_brother_taskbar",
-    "version": "0.1.19",
+    "version": "0.1.20",
     "description": "Taskbar app displaying the remaining play time of users monitored by LittleBrother",
     "author": "Marcus Rickert",
     "author_email": "little-brother@web.de",
