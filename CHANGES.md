@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.21 (release, March 12th, 2022)
+
+* Merge Snyk security fix
+
 ## Version 0.1.20 (release, March 12th, 2022)
 
 * Add CODE_OF_CONDUCT.md and CONTRIBUTING.md
