@@ -20,7 +20,7 @@ The following screenshots show the display of `LittleBrotherTaskbar` when option
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
 
-These are the corresponding screenhots when optional play is active.
+These are the corresponding screenhots when optional play time is active.
 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_warning.png) 
@@ -49,6 +49,7 @@ See [here](https://github.com/marcus67/little_brother_taskbar/blob/master/CHANGE
 | CircleCI            | <A HREF="https://circleci.com/gh/marcus67/little_brother_taskbar/tree/master"><IMG SRC="https://img.shields.io/circleci/project/github/marcus67/little_brother_taskbar/master.svg?label=master"></A>                                                                                                                                                                                 | <A HREF="https://circleci.com/gh/marcus67/little_brother_taskbar/tree/release"><IMG SRC="https://img.shields.io/circleci/project/github/marcus67/little_brother_taskbar/release.svg?label=release"></A> |
 | Test Coverage       | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/master"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar.svg?label=master"></A>                                                                                                                                                                                               | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/release"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar/release.svg?label=release"></A>        |
 | Snyk Vulnerability  | <a href="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt"><img src="https://snyk.io/test/github/marcus67/little_brother_taskbar/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt" style="max-width:100%;"></a> | not available                                                                                                                                                                                           |
+| Snyk Package Health | not available                                                                                                                                                                                                                                                                                                                                                                        | [![little-brother-taskbar](https://snyk.io/advisor/python/little-brother-taskbar/badge.svg)](https://snyk.io/advisor/python/little-brother-taskbar)                                                     |
 | Codacy Code Quality | <a href="https://www.codacy.com/app/marcus67/little_brother_taskbar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcus67/little_brother_taskbar&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f1fc3b113b95438189da9032ecf03b34"/></a>                                                                                         | not available                                                                                                                                                                                           |
 | Code Climate        | <a href="https://codeclimate.com/github/marcus67/little_brother_taskbar/maintainability"><img src="https://api.codeclimate.com/v1/badges/2e41f6ccb536eb5073d4/maintainability" /></a>                                                                                                                                                                                                | not available                                                                                                                                                                                           |
 
@@ -209,9 +210,33 @@ The configuration will be saved to (and subsequently loaded from) the file `~/.c
 
 ## Caveats
 
+### Issue Lists
 The application `LittleBrotherTaskbar` is far from perfect. Issues are listed on GitHub 
 (see [here](https://github.com/marcus67/little_brother_taskbar/issues)). Feel free to open new issues if you have 
 any trouble with installing and/or running the application.
+
+### Missing Tray Icon on Modern Desktops (e.g. Gnome) 
+
+The application  `little_brother_taskbar` uses the [wxPython](https://www.wxpython.org/) package to interact with the 
+XWindows system including 
+the system tray functionality. Unfortunately, the specification for the latter varies across the windows managers and 
+their versions. In modern versions of Gnome, for example, the tray icons provided by wxPython are no longer supported. 
+However, there is a Gnome extension called [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) 
+which can be installed using a Debian package which shows all "old-fashioned" 
+tray icons in the modern Gnome toolbar at the top of the screen.
+
+Follow these steps:
+
+   * As `root` open a shell and install the extension:
+        
+         apt-get install gnome-shell-extension-top-icons-plus
+
+   * Log out of the X session.
+   * Log into a new X session as the monitored user using the Gnome Desktop.
+   * Verify that there is at least the Little-Brother icon visible in the top center toolbar. 
+
+This extension may actually make other icons of installed applications visible which are using the old tray API. 
+Be prepared for a surprise.
 
 ## Internationalization
 
