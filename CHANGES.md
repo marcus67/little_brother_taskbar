@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.22 (release, April 8th, 2022)
+
+* Upgrade `python_base_app` to 0.2.39 (eliminate dependency on PIP package `python-ldap`)
+
 ## Version 0.1.21 (release, March 12th, 2022)
 
 * Merge Snyk security fix
