@@ -73,6 +73,8 @@ analyze:
     # Suppress automatic checkout for all sub modules
     GIT_SUBMODULE_STRATEGY: recursive
 
+
+
 publish_pypi:
   image: marcusrickert/docker-python-app:latest
   stage: publish
