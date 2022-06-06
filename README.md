@@ -60,7 +60,7 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 `LittleBrotherTaskbar` has the following features:
 
 *   Shows the status (remaining play time) of a user monitored by 
-    [LittleBrother](https://github.com/marcus67/little_brother)
+    [LittleBrother](https://github.com/marcus67/little_brother) on Linux and Windows systems.
     
 *   Plays spoken notifications about the status:
     *   Session length upon login
@@ -191,7 +191,33 @@ installation on a 19.3 Ubuntu system using the Mate Desktop.
     ![Startup Applications Step 3](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-startup-applications-3.png)
     
 
-### Troubleshooting
+## Installing LittleBrotherTaskbar on a Windows System
+
+On a Windows system some additional configuration needs to be done most of which relates to the audio playback. Since
+the tool `mpg123` is not available and the default Windows Media player is a little difficult to handle from the command
+line it is recommended to install the media player [vlc](https://en.vlc.de/).
+
+### Configuration of the video player
+
+If the file `%userprofile/.config/LittleBrotherTaskbar.conf` does not exist yet, create it with a text editor and
+add the following lines:
+
+    [AudioHandler]
+    audio_player=mpg123
+    mpg123_binary=C:\Program Files\VLC Plus Player\vlc.exe
+    play_command_pattern={binary} --intf dummy {filename}
+
+We are *abusing* the `mpg123` driver to configure the `vlc` binary. The path in `mpg123_binary` may have to be adapted
+to your specific installation of `vlc`. The option `--intf dummy` will force `vlc` to start without a GUI frontend.
+
+### Choosing the Python version
+
+As of June 2022, the module `wxPython` is only available as a pre-compiled package for Python 3.9 and older. On a 
+Python 3.10 system you will have to compile the module yourself which can be **a real nuisance** on any system and
+is **definitely so on Windows**. So, if you do not have any other need for a Python 3.10 interpreter it is strongly 
+recommended to use Python 3.9.
+
+## Troubleshooting
 
 So, you went through all of the above but `LittleBrotherTaskbar` does not seem to work? Maybe this 
 [troubleshooting page](https://github.com/marcus67/little_brother_taskbar/blob/master/TROUBLESHOOTING.md) can help you.

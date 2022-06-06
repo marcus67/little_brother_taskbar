@@ -6,6 +6,7 @@ This document lists all changes of `LittleBrotherTaskbar` with the most recent c
 
 ## Version 0.1.22 (release, June 5th, 2022)
 
+* Support Windows
 * Upgrade `python_base_app` to 0.2.40 (eliminate dependency on PIP package `python-ldap`)
 * Call `MainLoop` of `wxpython` in main thread
 * Derive path of temporary directory in a platform independent way 
