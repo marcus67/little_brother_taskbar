@@ -4,6 +4,10 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.23 (release, March 5th, 2024)
+
+* Upgrade `python_base_app` to 0.2.50
+
 ## Version 0.1.22 (release, June 5th, 2022)
 
 * Support Windows
