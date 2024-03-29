@@ -4,6 +4,34 @@
 
 This document lists all changes of `LittleBrotherTaskbar` with the most recent changes at the top.
 
+## Version 0.1.23 (release, March 5th, 2024)
+
+* Upgrade `python_base_app` to 0.2.50
+
+## Version 0.1.22 (release, June 5th, 2022)
+
+* Support Windows
+* Upgrade `python_base_app` to 0.2.40 (eliminate dependency on PIP package `python-ldap`)
+* Call `MainLoop` of `wxpython` in main thread
+* Derive path of temporary directory in a platform independent way 
+* Added some debugging output
+* Build URLs in a platform independent way 
+
+## Version 0.1.21 (release, March 12th, 2022)
+
+* Merge Snyk security fix
+
+## Version 0.1.20 (release, March 12th, 2022)
+
+* Add CODE_OF_CONDUCT.md and CONTRIBUTING.md
+* Add Snyk package health indicator in README.md
+* Upgrade `python_base_app` to 0.2.36
+
+## Version 0.1.19 (release, August 15th, 2021)
+
+* Describe workaround for modern Gnome desktops. See [README](README.md).  
+* Closes #33, see [here](https://github.com/marcus67/little_brother_taskbar/issues/33)  
+
 ## Version 0.1.18 (release, August 15th, 2021)
 
 *   Add [CodeClimate](https://codeclimate.com/github/marcus67/little_brother_taskbar) rating to README.md

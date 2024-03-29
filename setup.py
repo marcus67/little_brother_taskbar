@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#    Copyright (C) 2019  Marcus Rickert
+#    Copyright (C) 2019-2022  Marcus Rickert
 #
 #    See https://github.com/marcus67/little_brother_taskbar
 #
@@ -21,8 +21,7 @@
 import os.path
 
 from setuptools import setup
-
-import little_brother_taskbar.settings
+from little_brother_taskbar import settings
 
 # See https://stackoverflow.com/questions/26900328/install-dependencies-from-setup-py
 
@@ -58,13 +57,14 @@ extended_setup_params = {
     # technical name used for e.g. directories, PIP-package, and users
     "build_debian_package" : False,
     "build_pypi_package": True,
-    "publish_pypi_package": {'release': ('https://upload.pypi.org/legacy/', 'PYPI_API_TOKEN'),
-                             'master': ('https://test.pypi.org/legacy/', 'TEST_PYPI_API_TOKEN')},
+    "publish_pypi_package": { settings.RELEASE_BRANCH_NAME: ('PYPI_API_URL', 'PYPI_API_TOKEN', 'TEST_PYPI_API_USER'),
+                              settings.MASTER_BRANCH_NAME: ('TEST_PYPI_API_URL', 'TEST_PYPI_API_TOKEN', 'TEST_PYPI_API_USER')
+                              },
     "analyze": True,
 }
 
-setup_params.update(little_brother_taskbar.settings.settings)
-extended_setup_params.update(little_brother_taskbar.settings.extended_settings)
+setup_params.update(settings.settings)
+extended_setup_params.update(settings.extended_settings)
 extended_setup_params.update(setup_params)
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  Marcus Rickert
+# Copyright (C) 2019-2022  Marcus Rickert
 #
 # See https://github.com/marcus67/little_brother_taskbar
 # This program is free software; you can redistribute it and/or modify
@@ -15,17 +15,17 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import os.path
+from urllib.parse import urljoin
 
-API_URL = "/api"
+API_URL = "/api/"
 API_REL_URL_EVENTS = "events"
-API_URL_EVENTS = os.path.join(API_URL, API_REL_URL_EVENTS)
+API_URL_EVENTS = urljoin(API_URL, API_REL_URL_EVENTS)
 
 API_REL_URL_STATUS = "status"
-API_URL_STATUS = os.path.join(API_URL, API_REL_URL_STATUS)
+API_URL_STATUS = urljoin(API_URL, API_REL_URL_STATUS)
 
 API_REL_URL_REQUEST_TIME_EXTENSION = "request-time-extension"
-API_URL_REQUEST_TIME_EXTENSION = os.path.join(API_URL, API_REL_URL_REQUEST_TIME_EXTENSION)
+API_URL_REQUEST_TIME_EXTENSION = urljoin(API_URL, API_REL_URL_REQUEST_TIME_EXTENSION)
 
 API_URL_PARAM_USERNAME = "username"
 API_URL_PARAM_SECRET = "secret"

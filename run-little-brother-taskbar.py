@@ -1,6 +1,9 @@
-#    Copyright (C) 2019-2021  Marcus Rickert
+# -*- coding: utf-8 -*-
+
+
+#    Copyright (C) 2019-2022  Marcus Rickert
 #
-#    See https://github.com/marcus67/python_base_app
+#    See https://github.com/marcus67/little_brother
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -16,19 +19,7 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-##################################################################################
-# Please, beware that this file has been generated! Do not make any changes here #
-# but only to python_base_app/templates/codacy.template.yml!                     #
-##################################################################################
+from little_brother_taskbar import taskbar_app
 
-engines:
-  duplication:
-    enabled: true
-    exclude_paths:
-      - little_brother_taskbar/test/**
-      - alembic/versions/**
-
-exclude_paths:
-  - 'little_brother_taskbar/templates/**'
-  - 'little_brother_taskbar/static/contrib/**'
-  - '**.md'
+if __name__ == '__main__':
+    exit(taskbar_app.main())

@@ -20,7 +20,7 @@ The following screenshots show the display of `LittleBrotherTaskbar` when option
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_warning.png) 
 
-These are the corresponding screenhots when optional play is active.
+These are the corresponding screenhots when optional play time is active.
 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_ok.png) 
 ![Screenshot Status](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot_status_with_optional_playtime_warning.png) 
@@ -49,6 +49,7 @@ See [here](https://github.com/marcus67/little_brother_taskbar/blob/master/CHANGE
 | CircleCI            | <A HREF="https://circleci.com/gh/marcus67/little_brother_taskbar/tree/master"><IMG SRC="https://img.shields.io/circleci/project/github/marcus67/little_brother_taskbar/master.svg?label=master"></A>                                                                                                                                                                                 | <A HREF="https://circleci.com/gh/marcus67/little_brother_taskbar/tree/release"><IMG SRC="https://img.shields.io/circleci/project/github/marcus67/little_brother_taskbar/release.svg?label=release"></A> |
 | Test Coverage       | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/master"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar.svg?label=master"></A>                                                                                                                                                                                               | <A HREF="https://codecov.io/gh/marcus67/little_brother_taskbar/branch/release"><IMG SRC="https://img.shields.io/codecov/c/github/marcus67/little_brother_taskbar/release.svg?label=release"></A>        |
 | Snyk Vulnerability  | <a href="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt"><img src="https://snyk.io/test/github/marcus67/little_brother_taskbar/badge.svg?targetFile=requirements.txt" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/marcus67/little_brother_taskbar?targetFile=requirements.txt" style="max-width:100%;"></a> | not available                                                                                                                                                                                           |
+| Snyk Package Health | not available                                                                                                                                                                                                                                                                                                                                                                        | [![little-brother-taskbar](https://snyk.io/advisor/python/little-brother-taskbar/badge.svg)](https://snyk.io/advisor/python/little-brother-taskbar)                                                     |
 | Codacy Code Quality | <a href="https://www.codacy.com/app/marcus67/little_brother_taskbar?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=marcus67/little_brother_taskbar&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f1fc3b113b95438189da9032ecf03b34"/></a>                                                                                         | not available                                                                                                                                                                                           |
 | Code Climate        | <a href="https://codeclimate.com/github/marcus67/little_brother_taskbar/maintainability"><img src="https://api.codeclimate.com/v1/badges/2e41f6ccb536eb5073d4/maintainability" /></a>                                                                                                                                                                                                | not available                                                                                                                                                                                           |
 
@@ -59,7 +60,7 @@ Note: The vulnerability status is derived from the Python PIP packages found in 
 `LittleBrotherTaskbar` has the following features:
 
 *   Shows the status (remaining play time) of a user monitored by 
-    [LittleBrother](https://github.com/marcus67/little_brother)
+    [LittleBrother](https://github.com/marcus67/little_brother) on Linux and Windows systems.
     
 *   Plays spoken notifications about the status:
     *   Session length upon login
@@ -190,7 +191,33 @@ installation on a 19.3 Ubuntu system using the Mate Desktop.
     ![Startup Applications Step 3](https://raw.githubusercontent.com/marcus67/little_brother_taskbar/master/doc/screenshot-startup-applications-3.png)
     
 
-### Troubleshooting
+## Installing LittleBrotherTaskbar on a Windows System
+
+On a Windows system some additional configuration needs to be done most of which relates to the audio playback. Since
+the tool `mpg123` is not available and the default Windows Media player is a little difficult to handle from the command
+line it is recommended to install the media player [vlc](https://en.vlc.de/).
+
+### Configuration of the video player
+
+If the file `%userprofile/.config/LittleBrotherTaskbar.conf` does not exist yet, create it with a text editor and
+add the following lines:
+
+    [AudioHandler]
+    audio_player=mpg123
+    mpg123_binary=C:\Program Files\VLC Plus Player\vlc.exe
+    play_command_pattern={binary} --intf dummy {filename}
+
+We are *abusing* the `mpg123` driver to configure the `vlc` binary. The path in `mpg123_binary` may have to be adapted
+to your specific installation of `vlc`. The option `--intf dummy` will force `vlc` to start without a GUI frontend.
+
+### Choosing the Python version
+
+As of June 2022, the module `wxPython` is only available as a pre-compiled package for Python 3.9 and older. On a 
+Python 3.10 system you will have to compile the module yourself which can be **a real nuisance** on any system and
+is **definitely so on Windows**. So, if you do not have any other need for a Python 3.10 interpreter it is strongly 
+recommended to use Python 3.9.
+
+## Troubleshooting
 
 So, you went through all of the above but `LittleBrotherTaskbar` does not seem to work? Maybe this 
 [troubleshooting page](https://github.com/marcus67/little_brother_taskbar/blob/master/TROUBLESHOOTING.md) can help you.
@@ -209,9 +236,33 @@ The configuration will be saved to (and subsequently loaded from) the file `~/.c
 
 ## Caveats
 
+### Issue Lists
 The application `LittleBrotherTaskbar` is far from perfect. Issues are listed on GitHub 
 (see [here](https://github.com/marcus67/little_brother_taskbar/issues)). Feel free to open new issues if you have 
 any trouble with installing and/or running the application.
+
+### Missing Tray Icon on Modern Desktops (e.g. Gnome) 
+
+The application  `little_brother_taskbar` uses the [wxPython](https://www.wxpython.org/) package to interact with the 
+XWindows system including 
+the system tray functionality. Unfortunately, the specification for the latter varies across the windows managers and 
+their versions. In modern versions of Gnome, for example, the tray icons provided by wxPython are no longer supported. 
+However, there is a Gnome extension called [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) 
+which can be installed using a Debian package which shows all "old-fashioned" 
+tray icons in the modern Gnome toolbar at the top of the screen.
+
+Follow these steps:
+
+   * As `root` open a shell and install the extension:
+        
+         apt-get install gnome-shell-extension-top-icons-plus
+
+   * Log out of the X session.
+   * Log into a new X session as the monitored user using the Gnome Desktop.
+   * Verify that there is at least the Little-Brother icon visible in the top center toolbar. 
+
+This extension may actually make other icons of installed applications visible which are using the old tray API. 
+Be prepared for a surprise.
 
 ## Internationalization
 

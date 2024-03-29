@@ -3,9 +3,11 @@ import wx
 import jinja2
 from wx import Colour, C2S_HTML_SYNTAX, CommandEvent
 
+from python_base_app.base_app import BaseApp
+from python_base_app import tools
+
 from little_brother_taskbar import status_frame_wxglade, constants
 from little_brother_taskbar.configuration_model import TaskBarAppConfigModel
-from python_base_app.base_app import BaseApp
 from little_brother_taskbar.button_info import ButtonInfo
 
 
@@ -28,10 +30,11 @@ class StatusFrame(status_frame_wxglade.StatusFrame):
         self.Bind(wx.EVT_LEFT_UP, lambda x: self.Show(False))
         self.Bind(wx.EVT_CLOSE, lambda x: self.Show(False))
 
-        icon = wx.NullIcon
-        icon_path = os.path.join(os.path.dirname(__file__), "static/icons/little-brother-taskbar-logo_32x32.bmp")
-        icon.CopyFromBitmap(wx.Bitmap(icon_path, wx.BITMAP_TYPE_BMP))
-        self.SetIcon(icon)
+        if not tools.is_windows():
+            icon = wx.NullIcon
+            icon_path = os.path.join(os.path.dirname(__file__), "static", "icons", "little-brother-taskbar-logo_32x32.bmp")
+            icon.CopyFromBitmap(wx.Bitmap(icon_path, wx.BITMAP_TYPE_BMP))
+            self.SetIcon(icon)
         self.SetTitle(p_window_title)
         self._status_html_window.SetSize(p_size)
         self.SetSize(p_size)
